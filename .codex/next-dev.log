@@ -103,3 +103,23 @@ Creating turbopack project { dir: 'C:\\Github\\dredir', testMode: true }
  GET /clareamento 200 in 134ms (next.js: 7ms, generate-params: 5ms, application-code: 127ms)
  GET /manifest.webmanifest 200 in 9ms (next.js: 1885µs, application-code: 7ms)
 ✓ Compiled in 72ms
+ GET / 200 in 66ms (next.js: 2ms, application-code: 63ms)
+ GET / 200 in 62ms (next.js: 1522µs, application-code: 61ms)
+ GET / 200 in 68ms (next.js: 1693µs, application-code: 66ms)
+ GET /whatsapp 200 in 41ms (next.js: 1933µs, application-code: 39ms)
+ GET / 200 in 64ms (next.js: 1653µs, application-code: 62ms)
+ GET /implantes 200 in 81ms (next.js: 6ms, generate-params: 4ms, application-code: 75ms)
+ GET /whatsapp 200 in 34ms (next.js: 1553µs, application-code: 33ms)
+ GET / 200 in 56ms (next.js: 1783µs, application-code: 54ms)
+ GET /implantes 200 in 68ms (next.js: 6ms, generate-params: 4ms, application-code: 62ms)
+ GET /whatsapp 200 in 35ms (next.js: 1558µs, application-code: 34ms)
+ GET /whatsapp 200 in 46ms (next.js: 1903µs, application-code: 44ms)
+ GET /whatsapp 200 in 42ms (next.js: 1835µs, application-code: 41ms)
+ GET /whatsapp 200 in 40ms (next.js: 1557µs, application-code: 39ms)
+ GET / 200 in 69ms (next.js: 2ms, application-code: 67ms)
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 264ms
+Creating turbopack project { dir: 'C:\\Github\\dredir', testMode: true }
+

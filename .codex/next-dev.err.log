@@ -1,0 +1,7 @@
+⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...
+0
+- PID:          18612
+- Dir:          C:\Github\dredir
+- Log:          .next\dev\logs\next-development.log
+
+Run taskkill /PID 18612 /F to stop it.

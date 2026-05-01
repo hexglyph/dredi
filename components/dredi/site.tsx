@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { getImageProps } from "next/image"
 import Link from "next/link"
 import {
   CheckCircle2,
@@ -46,7 +46,10 @@ const navTreatments = [
 ]
 
 const heroAssets: Record<string, { desktop: string; mobile?: string }> = {
-  home: { desktop: "/site-assets/2026/03/Dr.-Edi-Banner-5.webp" },
+  home: {
+    desktop: "/site-assets/2026/03/Dr.-Edi-Banner-5.webp",
+    mobile: "/site-assets/2026/03/Edi-Mobile-2.webp",
+  },
   implantes: {
     desktop: "/site-assets/2025/09/upscalemedia-transformed-1-scaled.png",
     mobile: "/site-assets/2025/09/5.webp",
@@ -171,15 +174,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(184,145,49,.22)] bg-[#111] text-white shadow-[0_14px_40px_rgba(0,0,0,.25)]">
-      <div className="mx-auto flex h-[88px] max-w-6xl items-center justify-between px-4 md:px-6">
-        <Link className="relative block h-16 w-28 shrink-0 overflow-hidden" href="/" aria-label="Vida Odontologia">
+      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 md:h-[88px] md:px-6">
+        <Link className="relative block h-14 w-24 shrink-0 overflow-hidden md:h-16 md:w-28" href="/" aria-label="Vida Odontologia">
           <Image
             src={LOGO_GOLD}
             alt="Vida Odontologia Avançada e Estética"
             fill
             sizes="112px"
             className="scale-[2.15] object-contain"
-            priority
           />
         </Link>
 
@@ -318,11 +320,12 @@ export function HomePage({ page }: { page: DrediPage }) {
         <Hero
           cta="Agendar agora"
           image={heroAssets.home.desktop}
+          mobileImage={heroAssets.home.mobile}
           subtitle="Nossa clínica oferece tratamentos completos para deixar seu sorriso mais bonito, saudável e funcional."
           title="Confiança, experiência e cuidado em cada sorriso com o Dr. Edi."
         />
 
-        <section className="dark-section py-20 md:py-28">
+        <section className="defer-render dark-section py-16 md:py-28">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <p className="mx-auto max-w-3xl text-base font-semibold text-white">
               Seja para recuperar um dente perdido, melhorar a estética ou cuidar da sua saúde bucal...
@@ -501,41 +504,75 @@ function Hero({
   mobileImage?: string
 }) {
   return (
-    <section className="relative min-h-[640px] overflow-hidden bg-black md:min-h-[560px]">
-      <div
-        className="absolute inset-0 hidden bg-cover bg-center md:block"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <div
-        className="absolute inset-0 bg-cover bg-top md:hidden"
-        style={{ backgroundImage: `url(${mobileImage ?? image})` }}
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.14)_56%,rgba(0,0,0,.35)),linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,0)_28%)]" />
+    <section className="relative min-h-[calc(100svh-72px)] overflow-hidden bg-black md:min-h-[560px]">
+      <HeroImage image={image} mobileImage={mobileImage} title={title} />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.2)_46%,rgba(0,0,0,.16)),linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.24)_58%,rgba(0,0,0,.38))] md:bg-[linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.14)_56%,rgba(0,0,0,.35)),linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,0)_28%)]" />
 
-      <div className="relative mx-auto flex min-h-[640px] max-w-6xl items-end px-4 pb-14 pt-20 md:min-h-[560px] md:items-center md:pb-0 md:pt-0">
+      <div className="relative mx-auto flex min-h-[calc(100svh-72px)] max-w-6xl items-end px-4 pb-10 pt-16 md:min-h-[560px] md:items-center md:px-6 md:pb-0 md:pt-0">
         <div className="max-w-[590px]">
-          <div className="relative mb-7 h-16 w-32">
+          <div className="relative mb-5 h-12 w-28 md:mb-7 md:h-16 md:w-32">
             <Image
               src={LOGO_WHITE}
               alt="Vida Odontologia"
               fill
               sizes="128px"
               className="object-contain"
-              priority
             />
           </div>
-          <h1 className="text-balance text-[42px] font-black leading-[1.04] text-white md:text-[54px]">
+          <h1 className="text-balance text-[34px] font-black leading-[1.05] text-white min-[390px]:text-[38px] md:text-[54px]">
             <HighlightedText text={title} />
           </h1>
-          <p className="mt-7 max-w-xl text-pretty text-base font-bold leading-7 text-white md:text-lg">
+          <p className="mt-5 max-w-xl text-pretty text-[15px] font-bold leading-7 text-white md:mt-7 md:text-lg">
             {subtitle}
           </p>
-          <div className="mt-10">
+          <div className="mt-7 md:mt-10">
             <CtaButton>{cta}</CtaButton>
           </div>
         </div>
       </div>
     </section>
+  )
+}
+
+function HeroImage({
+  title,
+  image,
+  mobileImage,
+}: {
+  title: string
+  image: string
+  mobileImage?: string
+}) {
+  const common = {
+    alt: title,
+    fill: true,
+    priority: true,
+    sizes: "100vw",
+  }
+  const {
+    props: { srcSet: desktopSrcSet, ...desktopProps },
+  } = getImageProps({
+    ...common,
+    src: image,
+  })
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({
+    ...common,
+    src: mobileImage ?? image,
+  })
+
+  return (
+    <picture>
+      {mobileImage ? <source media="(max-width: 767px)" srcSet={mobileSrcSet} /> : null}
+      <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
+      <img
+        {...desktopProps}
+        alt=""
+        className="object-cover object-top md:object-center"
+        fetchPriority="high"
+      />
+    </picture>
   )
 }
 
@@ -598,7 +635,7 @@ function GallerySection({
   dark?: boolean
 }) {
   return (
-    <section className={dark ? "dark-section py-20 md:py-28" : "light-section py-20 md:py-28"}>
+    <section className={dark ? "defer-render dark-section py-16 md:py-28" : "defer-render light-section py-16 md:py-28"}>
       <div className="mx-auto max-w-6xl px-4 text-center">
         <SectionTitle title={title} />
         {intro ? (
@@ -619,7 +656,7 @@ function GallerySection({
 
 function AboutDoctor() {
   return (
-    <section className="light-section py-20 md:py-28" id="quemeedi">
+    <section className="defer-render light-section py-16 md:py-28" id="quemeedi">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-[.95fr_1.25fr]">
         <div className="corner-mark relative aspect-[4/5] overflow-hidden rounded-lg border border-[rgba(184,145,49,.2)] bg-[#f8f6ee] p-7">
           <div className="relative size-full overflow-hidden rounded-md">
@@ -627,7 +664,6 @@ function AboutDoctor() {
               src={DOCTOR_PHOTO}
               alt="Dr. Edi"
               fill
-              priority
               sizes="(max-width: 768px) 90vw, 480px"
               className="object-cover"
             />
@@ -667,7 +703,7 @@ function AboutDoctor() {
 function ClinicSection({ tone = "light" }: { tone?: "light" | "dark" }) {
   const dark = tone === "dark"
   return (
-    <section className={dark ? "dark-section py-20 md:py-28" : "light-section py-20 md:py-28"} id="localizacao">
+    <section className={dark ? "defer-render dark-section py-16 md:py-28" : "defer-render light-section py-16 md:py-28"} id="localizacao">
       <div className="mx-auto max-w-6xl px-4 text-center">
         <SectionTitle title="Conheça a clínica vida mais!" />
         <p className={`mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 ${dark ? "text-white" : "text-black"}`}>
@@ -715,7 +751,7 @@ function LocalSearchSection() {
   ]
 
   return (
-    <section className="light-section py-20 md:py-28" aria-labelledby="dentista-campinas">
+    <section className="defer-render light-section py-16 md:py-28" aria-labelledby="dentista-campinas">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
@@ -788,7 +824,7 @@ function CtaSection({
   cta?: string
 }) {
   return (
-    <section className={dark ? "dark-section py-20 md:py-28" : "light-section py-20 md:py-28"}>
+    <section className={dark ? "defer-render dark-section py-16 md:py-28" : "defer-render light-section py-16 md:py-28"}>
       <div className="mx-auto max-w-4xl px-4 text-center">
         <SectionTitle title={title} />
         {text ? (
@@ -814,7 +850,7 @@ function TextSection({
   const { intro, cards, list } = shapeLines(group.lines)
 
   return (
-    <section className={dark ? "dark-section py-20 md:py-28" : "light-section py-20 md:py-28"}>
+    <section className={dark ? "defer-render dark-section py-16 md:py-28" : "defer-render light-section py-16 md:py-28"}>
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <SectionTitle title={group.title} />
@@ -857,7 +893,7 @@ function FAQSection({ faqs }: { faqs: Array<{ question: string; answer: string }
   if (!faqs.length) return null
 
   return (
-    <section className="dark-section py-20 md:py-28">
+    <section className="defer-render dark-section py-16 md:py-28">
       <div className="mx-auto max-w-3xl px-4">
         <SectionTitle title="Perguntas Frequentes" />
         <div className="mt-10 divide-y divide-white/15">

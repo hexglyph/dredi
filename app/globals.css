@@ -77,6 +77,11 @@ strong {
   color: #111;
 }
 
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
 .nav-link {
   color: var(--gold-soft);
   text-decoration: none;
@@ -207,6 +212,10 @@ strong {
 }
 
 @media (max-width: 767px) {
+  .defer-render {
+    contain-intrinsic-size: auto 640px;
+  }
+
   .treatment-card {
     min-height: 0;
   }

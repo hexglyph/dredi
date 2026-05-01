@@ -43,7 +43,6 @@ export function CarouselStrip({ images, title, tone = "light" }: CarouselStripPr
               src={src}
               alt={`${title} - imagem ${index + 1}`}
               fill
-              loading="eager"
               sizes="(max-width: 768px) 78vw, 360px"
               className="object-cover"
             />

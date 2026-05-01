@@ -283,7 +283,7 @@ export default async function WhatsAppPage({ searchParams }: WhatsAppPageProps) 
 
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/12 bg-[#101010]/94 p-3 backdrop-blur md:hidden">
           <a
-            className="cta-shine flex min-h-14 items-center justify-center gap-3 overflow-hidden rounded-lg bg-[#20c967] px-5 text-base font-extrabold text-white shadow-[0_0_34px_rgba(32,201,103,.45)]"
+            className="cta-shine flex min-h-14 items-center justify-center gap-3 overflow-hidden rounded-lg bg-[#1fad58] px-5 text-base font-extrabold text-white shadow-[0_0_34px_rgba(32,201,103,.45)]"
             href={defaultHref}
             rel="noopener noreferrer"
             target="_blank"
@@ -300,7 +300,7 @@ export default async function WhatsAppPage({ searchParams }: WhatsAppPageProps) 
 function WhatsAppButton({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
-      className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#20c967] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
+      className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
       href={href}
       rel="noopener noreferrer"
       target="_blank"

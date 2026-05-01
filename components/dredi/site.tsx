@@ -510,15 +510,6 @@ function Hero({
 
       <div className="relative mx-auto flex min-h-[calc(100svh-72px)] max-w-6xl items-end px-4 pb-10 pt-16 md:min-h-[560px] md:items-center md:px-6 md:pb-0 md:pt-0">
         <div className="max-w-[590px]">
-          <div className="relative mb-5 h-12 w-28 md:mb-7 md:h-16 md:w-32">
-            <Image
-              src={LOGO_WHITE}
-              alt="Vida Odontologia"
-              fill
-              sizes="128px"
-              className="object-contain"
-            />
-          </div>
           <h1 className="text-balance text-[34px] font-black leading-[1.05] text-white min-[390px]:text-[38px] md:text-[54px]">
             <HighlightedText text={title} />
           </h1>
@@ -612,7 +603,7 @@ function HighlightedText({ text }: { text: string }) {
 function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <a
-      className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#20c967] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
+      className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
       href={whatsappHref()}
       rel="noopener noreferrer"
       target="_blank"

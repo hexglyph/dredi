@@ -123,3 +123,5 @@ Creating turbopack project { dir: 'C:\\Github\\dredir', testMode: true }
 ✓ Ready in 264ms
 Creating turbopack project { dir: 'C:\\Github\\dredir', testMode: true }
 
+[?25h
+ ELIFECYCLE  Command failed with exit code 1.

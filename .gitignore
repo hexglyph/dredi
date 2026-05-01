@@ -8,4 +8,5 @@ next.user-config.*
 # Common ignores
 node_modules
 .next/
+out/
 .DS_Store

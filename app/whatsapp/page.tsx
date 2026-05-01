@@ -20,12 +20,6 @@ import {
 } from "@/components/dredi/structured-data"
 import { businessProfile, createPageMetadata } from "@/lib/seo"
 
-type SearchParams = Record<string, string | string[] | undefined>
-
-type WhatsAppPageProps = {
-  searchParams?: Promise<SearchParams>
-}
-
 const pageTitle = "Agende pelo WhatsApp"
 const pageDescription =
   "Fale pelo WhatsApp com a equipe do Dr. Edi em Campinas para agendar uma avaliação odontológica particular."
@@ -46,9 +40,8 @@ export const metadata: Metadata = createPageMetadata({
   noindex: true,
 })
 
-export default async function WhatsAppPage({ searchParams }: WhatsAppPageProps) {
-  const params = searchParams ? await searchParams : {}
-  const defaultHref = createWhatsAppHref(params)
+export default function WhatsAppPage() {
+  const defaultHref = createWhatsAppHref()
 
   return (
     <>
@@ -204,7 +197,7 @@ export default async function WhatsAppPage({ searchParams }: WhatsAppPageProps) 
               ].map((service) => (
                 <a
                   className="corner-mark rounded-lg border border-[rgba(184,145,49,.28)] bg-white/[.035] p-6 text-left text-lg font-extrabold text-white transition hover:-translate-y-1 hover:border-[var(--gold)] hover:bg-white/[.06]"
-                  href={createWhatsAppHref(params, `Olá. Vim pela campanha e gostaria de saber mais sobre ${service}.`)}
+                  href={createWhatsAppHref(`Olá. Vim pela campanha e gostaria de saber mais sobre ${service}.`)}
                   key={service}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -311,21 +304,8 @@ function WhatsAppButton({ href, children }: { href: string; children: React.Reac
   )
 }
 
-function createWhatsAppHref(
-  params: SearchParams,
-  message = "Olá. Vim pela campanha e gostaria de agendar uma avaliação odontológica.",
-) {
-  const source = firstParam(params.utm_source)
-  const medium = firstParam(params.utm_medium)
-  const campaign = firstParam(params.utm_campaign)
-  const attribution = [source, medium, campaign].filter(Boolean).join(" / ")
-  const text = attribution ? `${message}\n\nOrigem: ${attribution}` : message
+function createWhatsAppHref(message = "Olá. Vim pela campanha e gostaria de agendar uma avaliação odontológica.") {
   const number = businessProfile.whatsapp.replace(/\D/g, "")
 
-  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`
-}
-
-function firstParam(value: string | string[] | undefined) {
-  if (Array.isArray(value)) return value[0]
-  return value
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`
 }

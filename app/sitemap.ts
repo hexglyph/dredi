@@ -3,6 +3,8 @@ import type { MetadataRoute } from "next"
 import { drediPages, servicePages } from "@/lib/dredi-data"
 import { absoluteUrl, canonicalPath, homeSeo, serviceSeo } from "@/lib/seo"
 
+export const dynamic = "force-static"
+
 const lastModified = new Date("2026-05-01")
 
 function pageImages(images: readonly string[]) {

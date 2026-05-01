@@ -36,5 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  return [homeEntry, ...serviceEntries]
+  const localLandingEntry: MetadataRoute.Sitemap[number] = {
+    url: absoluteUrl("/dentista/campinas"),
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.95,
+    images: [absoluteUrl(homeSeo.image)],
+  }
+
+  return [homeEntry, localLandingEntry, ...serviceEntries]
 }

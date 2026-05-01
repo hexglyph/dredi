@@ -385,6 +385,118 @@ export function HomePage({ page }: { page: DrediPage }) {
   )
 }
 
+export function DentistCampinasPage({ page }: { page: DrediPage }) {
+  const faq = parseFaq(page.text)
+
+  return (
+    <>
+      <JsonLd
+        data={[
+          buildDentistSchema(),
+          buildPersonSchema(),
+          buildWebsiteSchema(),
+          buildWebPageSchema({
+            path: "/dentista/campinas",
+            title: "Dentista em Campinas",
+            description:
+              "Dentista em Campinas para avaliação odontológica particular, implantes, próteses, facetas, clareamento e tratamento de canal.",
+            image: heroAssets.home.desktop,
+          }),
+          buildBreadcrumbSchema("/dentista/campinas", [
+            { name: "Início", path: "/" },
+            { name: "Dentista em Campinas", path: "/dentista/campinas" },
+          ]),
+          buildServiceItemListSchema(),
+          buildFaqSchema("/dentista/campinas", faq),
+        ]}
+      />
+      <SiteShell>
+        <Hero
+          cta="Agendar avaliação"
+          image={heroAssets.home.desktop}
+          mobileImage={heroAssets.home.mobile}
+          subtitle="Atendimento particular na Vida Odontologia para quem busca diagnóstico claro, planejamento personalizado e cuidado completo com o sorriso em Campinas."
+          title="Dentista em Campinas para cuidar do seu sorriso com o Dr. Edi."
+        />
+
+        <section className="defer-render light-section py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+                Campinas, SP
+              </p>
+              <SectionTitle
+                className="mt-4"
+                title="Avaliação odontológica para entender seu caso e indicar o melhor tratamento"
+              />
+              <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black">
+                A consulta é conduzida com atenção ao seu objetivo, histórico bucal e necessidade atual. O plano pode
+                envolver prevenção, estética, restaurações, implantes, próteses ou tratamento de canal.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  title: "Atendimento particular",
+                  text: "Consulta com orientação profissional e explicação clara das alternativas de tratamento.",
+                },
+                {
+                  title: "Tratamentos completos",
+                  text: "Implantes, próteses, facetas, coroas, clareamento, endodontia, ortodontia e dentística.",
+                },
+                {
+                  title: "Clínica em Campinas",
+                  text: `Atendimento na ${businessProfile.address.streetAddress}, ${businessProfile.address.locality} - ${businessProfile.address.region}.`,
+                },
+              ].map((item) => (
+                <article className="info-card-light corner-mark" key={item.title}>
+                  <h3 className="text-xl font-extrabold">{item.title}</h3>
+                  <p className="mt-4 text-sm font-semibold leading-6">{item.text}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 flex justify-center">
+              <CtaButton>Agendar avaliação</CtaButton>
+            </div>
+          </div>
+        </section>
+
+        <section className="defer-render dark-section py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 text-center">
+            <SectionTitle title="Escolha o tratamento que você procura" />
+            <div className="mt-12 grid gap-5 md:grid-cols-5">
+              {treatmentCards.map((card) => (
+                <Link className="treatment-card corner-mark text-left" href={card.href} key={card.href}>
+                  <div className="relative aspect-square overflow-hidden rounded-md">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 220px"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="mt-7 text-xl font-extrabold text-white">
+                    <HighlightedText text={card.title} />
+                  </h3>
+                  <p className="mt-4 text-sm font-semibold leading-6 text-white">{card.text}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <AboutDoctor />
+        <ClinicSection tone="dark" />
+        <LocalSearchSection />
+        <FAQSection faqs={faq} />
+      </SiteShell>
+    </>
+  )
+}
+
 export function ServicePage({ page }: { page: DrediPage }) {
   const cta = page.buttons[0] ?? "Agendar agora"
   const faq = parseFaq(page.text)

@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #111111;
+  --foreground: #ffffff;
+  --gold: #b89131;
+  --gold-dark: #8b6b24;
+  --gold-soft: #dcc373;
+  --green: #22ca68;
+  --green-bright: #22e87d;
+  --paper: #ffffff;
+  --ink: #101010;
+  --muted-ink: #2b2b2b;
+  --radius: 8px;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  display: block;
+}
+
+strong {
+  font-weight: 900;
+}
+
+.gold-text {
+  color: var(--gold-soft);
+}
+
+.dark-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(184, 145, 49, 0.08), transparent 34rem),
+    linear-gradient(135deg, #101010 0%, #15130f 100%);
+  color: #fff;
+}
+
+.light-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(184, 145, 49, 0.08), transparent 30rem),
+    #fff;
+  color: #111;
+}
+
+.nav-link {
+  color: var(--gold-soft);
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.dropdown-link,
+.mobile-link {
+  display: block;
+  border-radius: 6px;
+  color: var(--gold-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.75rem 0.85rem;
+  text-decoration: none;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.dropdown-link:hover,
+.mobile-link:hover {
+  background: rgba(184, 145, 49, 0.14);
+  color: #fff;
+}
+
+.treatment-card {
+  border: 1px solid rgba(184, 145, 49, 0.22);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(184, 145, 49, 0.08)),
+    #14130f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  color: #fff;
+  min-height: 380px;
+  overflow: hidden;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.treatment-card:hover {
+  border-color: rgba(220, 195, 115, 0.72);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.treatment-card:hover img {
+  transform: scale(1.04);
+}
+
+.corner-mark::before {
+  background: linear-gradient(90deg, var(--gold), rgba(184, 145, 49, 0));
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(184, 145, 49, 0.28);
+  content: "";
+  height: 3px;
+  left: 1.25rem;
+  position: absolute;
+  top: 0;
+  width: 46px;
+}
+
+.corner-mark {
+  position: relative;
+}
+
+.info-card-dark,
+.info-card-light {
+  border-radius: var(--radius);
+  min-height: 180px;
+  padding: 2.1rem 1.75rem;
+}
+
+.info-card-dark {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(184, 145, 49, 0.07)),
+    #151411;
+  border: 1px solid rgba(184, 145, 49, 0.2);
+  color: #fff;
+}
+
+.info-card-light {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(184, 145, 49, 0.1)),
+    #fbfaf7;
+  border: 1px solid rgba(184, 145, 49, 0.2);
+  color: #111;
+}
+
+.cta-shine {
+  position: relative;
+}
+
+.cta-shine::after {
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.92) 48%, transparent 100%);
+  content: "";
+  height: 130%;
+  position: absolute;
+  right: -25%;
+  top: -15%;
+  transform: skewX(-16deg);
+  width: 22%;
+}
+
+.cta-shine > * {
+  position: relative;
+  z-index: 1;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .treatment-card {
+    min-height: 0;
+  }
+
+  .corner-mark::before {
+    left: 1rem;
+  }
+}

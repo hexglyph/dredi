@@ -1,0 +1,878 @@
+[
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/1-300x300.webp",
+    "local": "/site-assets/2025/01/1-300x300.webp",
+    "file": "1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/2-300x300.webp",
+    "local": "/site-assets/2025/01/2-300x300.webp",
+    "file": "2-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/3-300x300.webp",
+    "local": "/site-assets/2025/01/3-300x300.webp",
+    "file": "3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/4-300x300.webp",
+    "local": "/site-assets/2025/01/4-300x300.webp",
+    "file": "4-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/5-300x300.webp",
+    "local": "/site-assets/2025/01/5-300x300.webp",
+    "file": "5-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Implantes-resultados-1-300x300.webp",
+    "local": "/site-assets/2025/01/Implantes-resultados-1-300x300.webp",
+    "file": "Implantes-resultados-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Implantes-resultados-2-300x300.webp",
+    "local": "/site-assets/2025/01/Implantes-resultados-2-300x300.webp",
+    "file": "Implantes-resultados-2-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Implantes-resultados-3-300x300.webp",
+    "local": "/site-assets/2025/01/Implantes-resultados-3-300x300.webp",
+    "file": "Implantes-resultados-3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Implantes-resultados-4-300x300.webp",
+    "local": "/site-assets/2025/01/Implantes-resultados-4-300x300.webp",
+    "file": "Implantes-resultados-4-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Sorriso-perfeito-1024x1024.webp",
+    "local": "/site-assets/2025/01/Sorriso-perfeito-1024x1024.webp",
+    "file": "Sorriso-perfeito-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Sorriso-perfeito-150x150.webp",
+    "local": "/site-assets/2025/01/Sorriso-perfeito-150x150.webp",
+    "file": "Sorriso-perfeito-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Sorriso-perfeito-300x300.webp",
+    "local": "/site-assets/2025/01/Sorriso-perfeito-300x300.webp",
+    "file": "Sorriso-perfeito-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Sorriso-perfeito-768x768.webp",
+    "local": "/site-assets/2025/01/Sorriso-perfeito-768x768.webp",
+    "file": "Sorriso-perfeito-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Sorriso-perfeito.webp",
+    "local": "/site-assets/2025/01/Sorriso-perfeito.webp",
+    "file": "Sorriso-perfeito.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/14-1-1.webp",
+    "local": "/site-assets/2025/03/14-1-1.webp",
+    "file": "14-1-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/14-2.webp",
+    "local": "/site-assets/2025/03/14-2.webp",
+    "file": "14-2.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/4-1.webp",
+    "local": "/site-assets/2025/03/4-1.webp",
+    "file": "4-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/5-1.webp",
+    "local": "/site-assets/2025/03/5-1.webp",
+    "file": "5-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/6-2-1.webp",
+    "local": "/site-assets/2025/03/6-2-1.webp",
+    "file": "6-2-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/7-2-1.webp",
+    "local": "/site-assets/2025/03/7-2-1.webp",
+    "file": "7-2-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-1.webp",
+    "file": "Feedbacks-dr-Edi-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-2.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-2.webp",
+    "file": "Feedbacks-dr-Edi-2.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-3.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-3.webp",
+    "file": "Feedbacks-dr-Edi-3.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-4.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-4.webp",
+    "file": "Feedbacks-dr-Edi-4.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-5.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-5.webp",
+    "file": "Feedbacks-dr-Edi-5.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-6.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-6.webp",
+    "file": "Feedbacks-dr-Edi-6.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-7.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-7.webp",
+    "file": "Feedbacks-dr-Edi-7.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-8.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-8.webp",
+    "file": "Feedbacks-dr-Edi-8.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Logo-vida-brnaca-1024x617.webp",
+    "local": "/site-assets/2025/03/Logo-vida-brnaca-1024x617.webp",
+    "file": "Logo-vida-brnaca-1024x617.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Logo-vida-brnaca-300x181.webp",
+    "local": "/site-assets/2025/03/Logo-vida-brnaca-300x181.webp",
+    "file": "Logo-vida-brnaca-300x181.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Logo-vida-brnaca-768x463.webp",
+    "local": "/site-assets/2025/03/Logo-vida-brnaca-768x463.webp",
+    "file": "Logo-vida-brnaca-768x463.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Logo-vida-brnaca.webp",
+    "local": "/site-assets/2025/03/Logo-vida-brnaca.webp",
+    "file": "Logo-vida-brnaca.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Protese-300x300.webp",
+    "local": "/site-assets/2025/03/Protese-300x300.webp",
+    "file": "Protese-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-foto-240x300.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-foto-240x300.webp",
+    "file": "Dr-Edi-foto-240x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-foto-768x960.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-foto-768x960.webp",
+    "file": "Dr-Edi-foto-768x960.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-foto-819x1024.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-foto-819x1024.webp",
+    "file": "Dr-Edi-foto-819x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-foto.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-foto.webp",
+    "file": "Dr-Edi-foto.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/10.webp",
+    "local": "/site-assets/2026/03/10.webp",
+    "file": "10.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/12.webp",
+    "local": "/site-assets/2026/03/12.webp",
+    "file": "12.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/13.webp",
+    "local": "/site-assets/2026/03/13.webp",
+    "file": "13.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/14.webp",
+    "local": "/site-assets/2026/03/14.webp",
+    "file": "14.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/15.webp",
+    "local": "/site-assets/2026/03/15.webp",
+    "file": "15.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/16.webp",
+    "local": "/site-assets/2026/03/16.webp",
+    "file": "16.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/17.webp",
+    "local": "/site-assets/2026/03/17.webp",
+    "file": "17.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/18.webp",
+    "local": "/site-assets/2026/03/18.webp",
+    "file": "18.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/20.webp",
+    "local": "/site-assets/2026/03/20.webp",
+    "file": "20.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/23.webp",
+    "local": "/site-assets/2026/03/23.webp",
+    "file": "23.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/24.webp",
+    "local": "/site-assets/2026/03/24.webp",
+    "file": "24.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/25.webp",
+    "local": "/site-assets/2026/03/25.webp",
+    "file": "25.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/3.webp",
+    "local": "/site-assets/2026/03/3.webp",
+    "file": "3.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/4.webp",
+    "local": "/site-assets/2026/03/4.webp",
+    "file": "4.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/5.webp",
+    "local": "/site-assets/2026/03/5.webp",
+    "file": "5.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/7.webp",
+    "local": "/site-assets/2026/03/7.webp",
+    "file": "7.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/9.webp",
+    "local": "/site-assets/2026/03/9.webp",
+    "file": "9.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/02/1-1-300x300.webp",
+    "local": "/site-assets/2025/02/1-1-300x300.webp",
+    "file": "1-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/02/2-1-300x300.webp",
+    "local": "/site-assets/2025/02/2-1-300x300.webp",
+    "file": "2-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/02/3-1-300x300.webp",
+    "local": "/site-assets/2025/02/3-1-300x300.webp",
+    "file": "3-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-4-300x300.webp",
+    "local": "/site-assets/2025/03/Clareamento-4-300x300.webp",
+    "file": "Clareamento-4-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-10-300x300.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-10-300x300.webp",
+    "file": "Design-sem-nome-10-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-12-300x300.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-12-300x300.webp",
+    "file": "Design-sem-nome-12-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Quem-e-Edi.webp",
+    "error": "Error: Failed 404: https://dredi.com.br/wp-content/uploads/2025/03/Quem-e-Edi.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-1-300x300.webp",
+    "local": "/site-assets/2025/03/Dentistica-1-300x300.webp",
+    "file": "Dentistica-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-3-300x300.webp",
+    "local": "/site-assets/2025/03/Dentistica-3-300x300.webp",
+    "file": "Dentistica-3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-4-300x300.webp",
+    "local": "/site-assets/2025/03/Dentistica-4-300x300.webp",
+    "file": "Dentistica-4-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-5-1024x1024.webp",
+    "local": "/site-assets/2025/03/Dentistica-5-1024x1024.webp",
+    "file": "Dentistica-5-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-5-150x150.webp",
+    "local": "/site-assets/2025/03/Dentistica-5-150x150.webp",
+    "file": "Dentistica-5-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-5-300x300.webp",
+    "local": "/site-assets/2025/03/Dentistica-5-300x300.webp",
+    "file": "Dentistica-5-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-5-768x768.webp",
+    "local": "/site-assets/2025/03/Dentistica-5-768x768.webp",
+    "file": "Dentistica-5-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Dentistica-5.webp",
+    "local": "/site-assets/2025/03/Dentistica-5.webp",
+    "file": "Dentistica-5.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-12-1024x1024.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-12-1024x1024.webp",
+    "file": "Design-sem-nome-12-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-12-150x150.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-12-150x150.webp",
+    "file": "Design-sem-nome-12-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-12-768x768.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-12-768x768.webp",
+    "file": "Design-sem-nome-12-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Design-sem-nome-12.webp",
+    "local": "/site-assets/2025/03/Design-sem-nome-12.webp",
+    "file": "Design-sem-nome-12.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana-1024x1024.webp",
+    "local": "/site-assets/2025/03/Porcelana-1024x1024.webp",
+    "file": "Porcelana-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana-150x150.webp",
+    "local": "/site-assets/2025/03/Porcelana-150x150.webp",
+    "file": "Porcelana-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana-300x300.webp",
+    "local": "/site-assets/2025/03/Porcelana-300x300.webp",
+    "file": "Porcelana-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana-768x768.webp",
+    "local": "/site-assets/2025/03/Porcelana-768x768.webp",
+    "file": "Porcelana-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana.webp",
+    "local": "/site-assets/2025/03/Porcelana.webp",
+    "file": "Porcelana.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina-1024x1024.webp",
+    "local": "/site-assets/2025/03/Resina-1024x1024.webp",
+    "file": "Resina-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina-150x150.webp",
+    "local": "/site-assets/2025/03/Resina-150x150.webp",
+    "file": "Resina-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina-300x300.webp",
+    "local": "/site-assets/2025/03/Resina-300x300.webp",
+    "file": "Resina-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina-768x768.webp",
+    "local": "/site-assets/2025/03/Resina-768x768.webp",
+    "file": "Resina-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina.webp",
+    "local": "/site-assets/2025/03/Resina.webp",
+    "file": "Resina.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Restauracao-300x300.webp",
+    "local": "/site-assets/2025/03/Restauracao-300x300.webp",
+    "file": "Restauracao-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-1-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-1-1.webp",
+    "file": "Feedbacks-dr-Edi-1-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-2-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-2-1.webp",
+    "file": "Feedbacks-dr-Edi-2-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-3-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-3-1.webp",
+    "file": "Feedbacks-dr-Edi-3-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-4-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-4-1.webp",
+    "file": "Feedbacks-dr-Edi-4-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-5-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-5-1.webp",
+    "file": "Feedbacks-dr-Edi-5-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-6-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-6-1.webp",
+    "file": "Feedbacks-dr-Edi-6-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-7-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-7-1.webp",
+    "file": "Feedbacks-dr-Edi-7-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Feedbacks-dr-Edi-8-1.webp",
+    "local": "/site-assets/2025/03/Feedbacks-dr-Edi-8-1.webp",
+    "file": "Feedbacks-dr-Edi-8-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Dr-Edi.webp",
+    "error": "Error: Failed 404: https://dredi.com.br/wp-content/uploads/2025/05/Dr-Edi.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-1024x1024.webp",
+    "local": "/site-assets/2025/05/Ortodontia-1024x1024.webp",
+    "file": "Ortodontia-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-150x150.webp",
+    "local": "/site-assets/2025/05/Ortodontia-150x150.webp",
+    "file": "Ortodontia-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-2-1-1024x1024.webp",
+    "local": "/site-assets/2025/05/Ortodontia-2-1-1024x1024.webp",
+    "file": "Ortodontia-2-1-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-2-1-150x150.webp",
+    "local": "/site-assets/2025/05/Ortodontia-2-1-150x150.webp",
+    "file": "Ortodontia-2-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-2-1-300x300.webp",
+    "local": "/site-assets/2025/05/Ortodontia-2-1-300x300.webp",
+    "file": "Ortodontia-2-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-2-1-768x768.webp",
+    "local": "/site-assets/2025/05/Ortodontia-2-1-768x768.webp",
+    "file": "Ortodontia-2-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-2-1.webp",
+    "local": "/site-assets/2025/05/Ortodontia-2-1.webp",
+    "file": "Ortodontia-2-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-3-1-1024x1024.webp",
+    "local": "/site-assets/2025/05/Ortodontia-3-1-1024x1024.webp",
+    "file": "Ortodontia-3-1-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-3-1-150x150.webp",
+    "local": "/site-assets/2025/05/Ortodontia-3-1-150x150.webp",
+    "file": "Ortodontia-3-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-3-1-300x300.webp",
+    "local": "/site-assets/2025/05/Ortodontia-3-1-300x300.webp",
+    "file": "Ortodontia-3-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-3-1-768x768.webp",
+    "local": "/site-assets/2025/05/Ortodontia-3-1-768x768.webp",
+    "file": "Ortodontia-3-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-3-1.webp",
+    "local": "/site-assets/2025/05/Ortodontia-3-1.webp",
+    "file": "Ortodontia-3-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-300x300.webp",
+    "local": "/site-assets/2025/05/Ortodontia-300x300.webp",
+    "file": "Ortodontia-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia-768x768.webp",
+    "local": "/site-assets/2025/05/Ortodontia-768x768.webp",
+    "file": "Ortodontia-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Ortodontia.webp",
+    "local": "/site-assets/2025/05/Ortodontia.webp",
+    "file": "Ortodontia.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-1024x1024.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-1024x1024.webp",
+    "file": "Tratamentos-ortodonticos-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-150x150.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-150x150.webp",
+    "file": "Tratamentos-ortodonticos-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-2-1024x1024.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-2-1024x1024.webp",
+    "file": "Tratamentos-ortodonticos-2-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-2-150x150.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-2-150x150.webp",
+    "file": "Tratamentos-ortodonticos-2-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-2-300x300.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-2-300x300.webp",
+    "file": "Tratamentos-ortodonticos-2-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-2-768x768.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-2-768x768.webp",
+    "file": "Tratamentos-ortodonticos-2-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-2.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-2.webp",
+    "file": "Tratamentos-ortodonticos-2.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-3-1024x1024.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-3-1024x1024.webp",
+    "file": "Tratamentos-ortodonticos-3-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-3-150x150.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-3-150x150.webp",
+    "file": "Tratamentos-ortodonticos-3-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-3-300x300.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-3-300x300.webp",
+    "file": "Tratamentos-ortodonticos-3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-3-768x768.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-3-768x768.webp",
+    "file": "Tratamentos-ortodonticos-3-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-3.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-3.webp",
+    "file": "Tratamentos-ortodonticos-3.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-300x300.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-300x300.webp",
+    "file": "Tratamentos-ortodonticos-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos-768x768.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos-768x768.webp",
+    "file": "Tratamentos-ortodonticos-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/05/Tratamentos-ortodonticos.webp",
+    "local": "/site-assets/2025/05/Tratamentos-ortodonticos.webp",
+    "file": "Tratamentos-ortodonticos.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-1-300x300.webp",
+    "local": "/site-assets/2025/03/Clareamento-1-300x300.webp",
+    "file": "Clareamento-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-1024x1024.webp",
+    "local": "/site-assets/2025/03/Clareamento-1024x1024.webp",
+    "file": "Clareamento-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-150x150.webp",
+    "local": "/site-assets/2025/03/Clareamento-150x150.webp",
+    "file": "Clareamento-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-300x300.webp",
+    "local": "/site-assets/2025/03/Clareamento-300x300.webp",
+    "file": "Clareamento-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento-768x768.webp",
+    "local": "/site-assets/2025/03/Clareamento-768x768.webp",
+    "file": "Clareamento-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Clareamento.webp",
+    "local": "/site-assets/2025/03/Clareamento.webp",
+    "file": "Clareamento.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Facetas-4-300x300.webp",
+    "local": "/site-assets/2025/03/Facetas-4-300x300.webp",
+    "file": "Facetas-4-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Porcelana-1-300x300.webp",
+    "local": "/site-assets/2025/03/Porcelana-1-300x300.webp",
+    "file": "Porcelana-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Resina-1-300x300.webp",
+    "local": "/site-assets/2025/03/Resina-1-300x300.webp",
+    "file": "Resina-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/4-1-150x150.webp",
+    "local": "/site-assets/2025/09/4-1-150x150.webp",
+    "file": "4-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/4-1-300x300.webp",
+    "local": "/site-assets/2025/09/4-1-300x300.webp",
+    "file": "4-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/4-1-768x768.webp",
+    "local": "/site-assets/2025/09/4-1-768x768.webp",
+    "file": "4-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/4-1.webp",
+    "local": "/site-assets/2025/09/4-1.webp",
+    "file": "4-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/5-1-300x300.webp",
+    "local": "/site-assets/2025/09/5-1-300x300.webp",
+    "file": "5-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/6-150x150.webp",
+    "local": "/site-assets/2025/09/6-150x150.webp",
+    "file": "6-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/6-300x300.webp",
+    "local": "/site-assets/2025/09/6-300x300.webp",
+    "file": "6-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/6-768x768.webp",
+    "local": "/site-assets/2025/09/6-768x768.webp",
+    "file": "6-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/6.webp",
+    "local": "/site-assets/2025/09/6.webp",
+    "file": "6.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/7-150x150.webp",
+    "local": "/site-assets/2025/09/7-150x150.webp",
+    "file": "7-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/7-300x300.webp",
+    "local": "/site-assets/2025/09/7-300x300.webp",
+    "file": "7-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/7-768x768.webp",
+    "local": "/site-assets/2025/09/7-768x768.webp",
+    "file": "7-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/7.webp",
+    "local": "/site-assets/2025/09/7.webp",
+    "file": "7.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-150x150.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-150x150.webp",
+    "file": "Dr-Edi-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-300x300.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-300x300.webp",
+    "file": "Dr-Edi-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi-768x768.webp",
+    "local": "/site-assets/2025/09/Dr-Edi-768x768.webp",
+    "file": "Dr-Edi-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/09/Dr-Edi.webp",
+    "local": "/site-assets/2025/09/Dr-Edi.webp",
+    "file": "Dr-Edi.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/Coroas-e-max-1.webp",
+    "error": "Error: Failed 404: https://dredi.com.br/wp-content/uploads/2025/01/Coroas-e-max-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Coroas-1-300x300.webp",
+    "local": "/site-assets/2025/03/Coroas-1-300x300.webp",
+    "file": "Coroas-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Coroas-2-300x300.webp",
+    "local": "/site-assets/2025/03/Coroas-2-300x300.webp",
+    "file": "Coroas-2-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Coroas-3-300x300.webp",
+    "local": "/site-assets/2025/03/Coroas-3-300x300.webp",
+    "file": "Coroas-3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Faceta.webp",
+    "error": "Error: Failed 404: https://dredi.com.br/wp-content/uploads/2025/03/Faceta.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Facetas-1-300x300.webp",
+    "local": "/site-assets/2025/03/Facetas-1-300x300.webp",
+    "file": "Facetas-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Facetas-3-1-300x300.webp",
+    "local": "/site-assets/2025/03/Facetas-3-1-300x300.webp",
+    "file": "Facetas-3-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/03/Facetas-3-300x300.webp",
+    "local": "/site-assets/2025/03/Facetas-3-300x300.webp",
+    "file": "Facetas-3-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Emax-1024x1024.webp",
+    "local": "/site-assets/2025/04/Emax-1024x1024.webp",
+    "file": "Emax-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Emax-150x150.webp",
+    "local": "/site-assets/2025/04/Emax-150x150.webp",
+    "file": "Emax-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Emax-300x300.webp",
+    "local": "/site-assets/2025/04/Emax-300x300.webp",
+    "file": "Emax-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Emax-768x768.webp",
+    "local": "/site-assets/2025/04/Emax-768x768.webp",
+    "file": "Emax-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Emax.webp",
+    "local": "/site-assets/2025/04/Emax.webp",
+    "file": "Emax.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Porcelana-1-1024x1024.webp",
+    "local": "/site-assets/2025/04/Porcelana-1-1024x1024.webp",
+    "file": "Porcelana-1-1024x1024.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Porcelana-1-150x150.webp",
+    "local": "/site-assets/2025/04/Porcelana-1-150x150.webp",
+    "file": "Porcelana-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Porcelana-1-300x300.webp",
+    "local": "/site-assets/2025/04/Porcelana-1-300x300.webp",
+    "file": "Porcelana-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Porcelana-1-768x768.webp",
+    "local": "/site-assets/2025/04/Porcelana-1-768x768.webp",
+    "file": "Porcelana-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/04/Porcelana-1.webp",
+    "local": "/site-assets/2025/04/Porcelana-1.webp",
+    "file": "Porcelana-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Coroas-e-max-1-1024x1024-1-150x150.webp",
+    "local": "/site-assets/2026/03/Coroas-e-max-1-1024x1024-1-150x150.webp",
+    "file": "Coroas-e-max-1-1024x1024-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Coroas-e-max-1-1024x1024-1-300x300.webp",
+    "local": "/site-assets/2026/03/Coroas-e-max-1-1024x1024-1-300x300.webp",
+    "file": "Coroas-e-max-1-1024x1024-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Coroas-e-max-1-1024x1024-1-768x768.webp",
+    "local": "/site-assets/2026/03/Coroas-e-max-1-1024x1024-1-768x768.webp",
+    "file": "Coroas-e-max-1-1024x1024-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Coroas-e-max-1-1024x1024-1.webp",
+    "local": "/site-assets/2026/03/Coroas-e-max-1-1024x1024-1.webp",
+    "file": "Coroas-e-max-1-1024x1024-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Faceta-1-1024x1024-1-150x150.webp",
+    "local": "/site-assets/2026/03/Faceta-1-1024x1024-1-150x150.webp",
+    "file": "Faceta-1-1024x1024-1-150x150.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Faceta-1-1024x1024-1-300x300.webp",
+    "local": "/site-assets/2026/03/Faceta-1-1024x1024-1-300x300.webp",
+    "file": "Faceta-1-1024x1024-1-300x300.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Faceta-1-1024x1024-1-768x768.webp",
+    "local": "/site-assets/2026/03/Faceta-1-1024x1024-1-768x768.webp",
+    "file": "Faceta-1-1024x1024-1-768x768.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2026/03/Faceta-1-1024x1024-1.webp",
+    "local": "/site-assets/2026/03/Faceta-1-1024x1024-1.webp",
+    "file": "Faceta-1-1024x1024-1.webp"
+  },
+  {
+    "url": "https://dredi.com.br/wp-content/uploads/2025/01/HelloParisSerif-Bold.ttf",
+    "local": "/site-assets/2025/01/HelloParisSerif-Bold.ttf",
+    "file": "HelloParisSerif-Bold.ttf"
+  }
+]

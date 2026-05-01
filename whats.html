@@ -1,0 +1,165 @@
+<!--
+  Botao flutuante de WhatsApp para WordPress.
+  Troque 5599999999999 pelo seu numero com DDI + DDD + numero.
+  Exemplo Brasil: 5511999999999
+-->
+
+<style>
+  .wp-whats,
+  .wp-whats * {
+    box-sizing: border-box;
+  }
+
+  .wp-whats {
+    --whats-green: #18b36b;
+    --whats-green-dark: #0c7d4b;
+    --whats-ink: #15372b;
+    --whats-paper: #ffffff;
+    position: fixed;
+    right: max(18px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 999999;
+    font-family: inherit;
+  }
+
+  .wp-whats__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .wp-whats__bubble {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    max-width: min(260px, calc(100vw - 104px));
+    padding: 10px 14px;
+    border: 1px solid rgba(12, 125, 75, 0.14);
+    border-radius: 8px;
+    background: var(--whats-paper);
+    color: var(--whats-ink);
+    box-shadow: 0 12px 28px rgba(21, 55, 43, 0.14);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    transform: translateX(4px);
+    opacity: 0.96;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .wp-whats__button {
+    position: relative;
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 999px;
+    background: linear-gradient(145deg, var(--whats-green), var(--whats-green-dark));
+    color: #ffffff;
+    box-shadow:
+      0 18px 34px rgba(12, 125, 75, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.24);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  }
+
+  .wp-whats__button::before {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border: 1px solid rgba(24, 179, 107, 0.42);
+    border-radius: inherit;
+    animation: wp-whats-pulse 1.9s ease-out infinite;
+  }
+
+  .wp-whats__icon {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+  }
+
+  .wp-whats__link:hover .wp-whats__bubble,
+  .wp-whats__link:focus-visible .wp-whats__bubble {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .wp-whats__link:hover .wp-whats__button,
+  .wp-whats__link:focus-visible .wp-whats__button {
+    transform: translateY(-2px) scale(1.03);
+    filter: saturate(1.08);
+    box-shadow:
+      0 22px 42px rgba(12, 125, 75, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  }
+
+  .wp-whats__link:focus-visible .wp-whats__button {
+    outline: 3px solid rgba(24, 179, 107, 0.3);
+    outline-offset: 4px;
+  }
+
+  @keyframes wp-whats-pulse {
+    0% {
+      opacity: 0.72;
+      transform: scale(0.92);
+    }
+    70%,
+    100% {
+      opacity: 0;
+      transform: scale(1.18);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .wp-whats {
+      right: max(14px, env(safe-area-inset-right));
+      bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+    .wp-whats__bubble {
+      display: none;
+    }
+
+    .wp-whats__button {
+      width: 58px;
+      height: 58px;
+      flex-basis: 58px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wp-whats__button::before {
+      animation: none;
+    }
+
+    .wp-whats__bubble,
+    .wp-whats__button {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="wp-whats">
+  <a
+    class="wp-whats__link"
+    href="https://wa.me/5599999999999?text=Ola%2C%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir conversa no WhatsApp"
+  >
+    <span class="wp-whats__bubble">Fale pelo WhatsApp</span>
+    <span class="wp-whats__button" aria-hidden="true">
+      <svg class="wp-whats__icon" viewBox="0 0 24 24" focusable="false">
+        <path d="M12 2.5a9.46 9.46 0 0 0-8 14.55L3 21l4.04-1.02A9.5 9.5 0 1 0 12 2.5Zm0 17.18a7.65 7.65 0 0 1-3.9-1.07l-.28-.17-2.39.61.64-2.32-.19-.3A7.67 7.67 0 1 1 12 19.68Zm4.26-5.74c-.23-.12-1.38-.68-1.6-.76-.21-.08-.37-.12-.53.12-.15.23-.61.75-.75.9-.14.16-.28.17-.52.06a6.23 6.23 0 0 1-1.84-1.14 6.94 6.94 0 0 1-1.27-1.59c-.13-.23-.01-.36.1-.47.1-.1.23-.27.35-.4.12-.14.16-.23.24-.39.08-.15.04-.29-.02-.41-.06-.12-.53-1.28-.73-1.75-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.41.06-.62.29-.21.23-.81.79-.81 1.93 0 1.14.83 2.23.95 2.39.11.15 1.63 2.49 3.96 3.49.55.24.98.38 1.32.49.55.17 1.06.15 1.45.09.44-.07 1.38-.56 1.57-1.1.2-.54.2-1 .14-1.1-.06-.09-.21-.15-.44-.26Z" />
+      </svg>
+    </span>
+  </a>
+</div>

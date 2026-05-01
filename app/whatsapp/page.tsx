@@ -197,6 +197,7 @@ export default function WhatsAppPage() {
               ].map((service) => (
                 <a
                   className="corner-mark rounded-lg border border-[rgba(184,145,49,.28)] bg-white/[.035] p-6 text-left text-lg font-extrabold text-white transition hover:-translate-y-1 hover:border-[var(--gold)] hover:bg-white/[.06]"
+                  data-google-ads-conversion="whatsappAppointment"
                   href={createWhatsAppHref(`Olá. Vim pela campanha e gostaria de saber mais sobre ${service}.`)}
                   key={service}
                   rel="noopener noreferrer"
@@ -294,6 +295,7 @@ function WhatsAppButton({ href, children }: { href: string; children: React.Reac
   return (
     <a
       className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
+      data-google-ads-conversion="whatsappAppointment"
       href={href}
       rel="noopener noreferrer"
       target="_blank"

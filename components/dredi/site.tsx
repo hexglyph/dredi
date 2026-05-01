@@ -7,12 +7,14 @@ import {
   Instagram,
   MapPin,
   Menu,
+  MessageCircle,
   Music2,
   Phone,
   Youtube,
 } from "lucide-react"
 
 import type { DrediPage } from "@/lib/dredi-data"
+import type { LocalServiceLanding } from "@/lib/local-service-landings"
 import { absoluteUrl, businessProfile, getServiceSeo, homeSeo } from "@/lib/seo"
 import {
   JsonLd,
@@ -219,6 +221,7 @@ function SiteHeader() {
         <div className="hidden items-center gap-7 md:flex">
           <a
             className="inline-flex h-11 min-w-44 items-center justify-center rounded-md bg-[linear-gradient(135deg,#d6b95f,#b38b2e)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(184,145,49,.26)] transition hover:-translate-y-0.5"
+            data-google-ads-conversion="whatsappAppointment"
             href={whatsappHref()}
             rel="noopener noreferrer"
             target="_blank"
@@ -286,6 +289,7 @@ function FloatingWhatsApp() {
     <a
       aria-label="Abrir conversa no WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid size-16 place-items-center rounded-full border border-emerald-300/35 bg-[#20e47b] text-black shadow-[0_0_34px_rgba(32,228,123,.55)] transition hover:-translate-y-1 md:bottom-8 md:right-8"
+      data-google-ads-conversion="whatsappContact"
       href={whatsappHref()}
       rel="noopener noreferrer"
       target="_blank"
@@ -494,6 +498,233 @@ export function DentistCampinasPage({ page }: { page: DrediPage }) {
         <FAQSection faqs={faq} />
       </SiteShell>
     </>
+  )
+}
+
+export function LocalServiceLandingPage({
+  page,
+  landing,
+}: {
+  page: DrediPage
+  landing: LocalServiceLanding
+}) {
+  const faq = parseFaq(page.text)
+  const hero = heroAssets[landing.sourceSlug] ?? heroAssets.home
+  const gallery = getGalleryImages(page)
+  const feedback = page.images.filter((image) => image.includes("Feedbacks-dr-Edi"))
+
+  return (
+    <>
+      <JsonLd
+        data={[
+          buildDentistSchema(),
+          buildPersonSchema(),
+          buildWebsiteSchema(),
+          buildServiceSchema(landing.sourceSlug),
+          buildWebPageSchema({
+            path: landing.path,
+            title: landing.title,
+            description: landing.description,
+            image: hero.desktop,
+            aboutId: `${absoluteUrl(landing.path)}#service`,
+          }),
+          buildBreadcrumbSchema(landing.path, [
+            { name: "Início", path: "/" },
+            { name: landing.label, path: landing.path },
+          ]),
+          buildFaqSchema(landing.path, faq),
+        ]}
+      />
+      <SiteShell>
+        <CampaignHero landing={landing} hero={hero} />
+
+        <CampaignDecisionSection landing={landing} />
+        <CampaignProcessSection landing={landing} />
+
+        <GallerySection
+          dark
+          images={gallery}
+          intro="Veja exemplos de resultados e estruturas usadas no planejamento dos tratamentos da Vida Odontologia."
+          title={`Resultados de ${landing.label.toLowerCase()}`}
+        />
+
+        {feedback.length ? (
+          <GallerySection
+            images={feedback}
+            intro="A experiência de outros pacientes ajuda você a conhecer melhor o cuidado da clínica antes de agendar."
+            title="Depoimentos de pacientes"
+          />
+        ) : null}
+
+        <AboutDoctor />
+        <ClinicSection tone="dark" />
+        <LocalSearchSection />
+        <FAQSection faqs={faq} />
+      </SiteShell>
+    </>
+  )
+}
+
+function CampaignHero({
+  landing,
+  hero,
+}: {
+  landing: LocalServiceLanding
+  hero: { desktop: string; mobile?: string }
+}) {
+  return (
+    <section className="relative overflow-hidden bg-[#101010] text-white">
+      <div className="absolute inset-0 opacity-72">
+        <HeroImage image={hero.desktop} mobileImage={hero.mobile} title={landing.heroTitle} />
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.62)_48%,rgba(0,0,0,.18)),linear-gradient(0deg,#101010_0%,rgba(16,16,16,.28)_42%,rgba(16,16,16,.1))]" />
+
+      <div className="relative mx-auto grid min-h-[calc(100svh-72px)] max-w-6xl items-end gap-8 px-4 py-10 md:min-h-[620px] md:grid-cols-[1.08fr_.72fr] md:items-center md:px-6 md:py-16">
+        <div className="max-w-2xl">
+          <p className="inline-flex items-center gap-2 rounded-md border border-[rgba(220,195,115,.42)] bg-black/35 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.14em] text-[var(--gold-soft)] backdrop-blur">
+            <MapPin className="size-4" />
+            Campinas, SP
+          </p>
+          <h1 className="mt-7 text-balance text-[38px] font-black leading-[1.02] text-white md:text-[62px]">
+            <HighlightedText text={landing.heroTitle} />
+          </h1>
+          <p className="mt-6 max-w-xl text-pretty text-base font-bold leading-7 text-white md:text-lg">
+            {landing.heroSubtitle}
+          </p>
+          <div className="mt-8 grid max-w-2xl gap-3 text-sm font-bold text-white/92 sm:grid-cols-3">
+            {landing.benefits.map((benefit) => (
+              <div className="flex items-center gap-2" key={benefit.title}>
+                <CheckCircle2 className="size-5 fill-[var(--gold)] text-black" />
+                {benefit.title}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside className="rounded-lg border border-[rgba(220,195,115,.34)] bg-[#111]/88 p-5 shadow-[0_30px_90px_rgba(0,0,0,.38)] backdrop-blur md:p-7">
+          <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-soft)]">
+            Atendimento particular
+          </p>
+          <h2 className="mt-4 text-2xl font-black leading-tight md:text-3xl">
+            Fale com a equipe e agende sua avaliação.
+          </h2>
+          <p className="mt-4 text-sm font-semibold leading-6 text-white/84">
+            Explique seu caso pelo WhatsApp e receba orientação para marcar uma consulta na clínica.
+          </p>
+          <CampaignCta landing={landing}>Chamar no WhatsApp</CampaignCta>
+          <a
+            className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md border border-white/20 px-5 text-sm font-extrabold text-white transition hover:border-[var(--gold)]"
+            href="tel:+551932760525"
+          >
+            <Phone className="size-4" />
+            {businessProfile.telephoneDisplay}
+          </a>
+        </aside>
+      </div>
+    </section>
+  )
+}
+
+function CampaignDecisionSection({ landing }: { landing: LocalServiceLanding }) {
+  return (
+    <section className="defer-render light-section py-16 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[.82fr_1.18fr] md:px-6">
+        <div>
+          <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+            {landing.label}
+          </p>
+          <SectionTitle className="mt-4 text-left" title={landing.introTitle} />
+          <p className="mt-7 text-base font-semibold leading-7 text-black">{landing.intro}</p>
+          <div className="mt-8">
+            <CampaignCta landing={landing}>Agendar avaliação</CampaignCta>
+          </div>
+        </div>
+
+        <div className="grid gap-4">
+          {landing.benefits.map((benefit, index) => (
+            <article
+              className="corner-mark grid gap-4 rounded-lg border border-[rgba(184,145,49,.2)] bg-[#fbfaf7] p-6 text-black md:grid-cols-[72px_1fr]"
+              key={benefit.title}
+            >
+              <div className="grid size-16 place-items-center rounded-md bg-[#111] text-xl font-black text-[var(--gold-soft)]">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <div>
+                <h3 className="text-xl font-extrabold">
+                  <HighlightedText text={benefit.title} />
+                </h3>
+                <p className="mt-3 text-sm font-semibold leading-6">{benefit.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CampaignProcessSection({ landing }: { landing: LocalServiceLanding }) {
+  const steps = [
+    {
+      title: "Conte o que está acontecendo",
+      text: "Envie uma mensagem com sua dúvida, sintoma ou objetivo estético para a equipe entender a prioridade.",
+    },
+    {
+      title: "Faça a avaliação clínica",
+      text: "O Dr. Edi avalia sua saúde bucal, escuta sua expectativa e explica as alternativas indicadas.",
+    },
+    {
+      title: "Receba um plano claro",
+      text: "Você sai com orientação sobre etapas, cuidados e próximos passos para realizar o tratamento.",
+    },
+  ]
+
+  return (
+    <section className="defer-render dark-section py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="grid gap-10 md:grid-cols-[1fr_.9fr] md:items-center">
+          <div>
+            <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-soft)]">
+              Como começa
+            </p>
+            <SectionTitle className="mt-4 text-left text-white" title="Uma avaliação objetiva antes de qualquer decisão" />
+            <p className="mt-7 max-w-2xl text-base font-semibold leading-7 text-white/86">
+              O foco inicial é {landing.label.toLowerCase()}, mas a indicação final depende da avaliação presencial.
+              Assim, cada etapa considera sua saúde bucal, expectativa e melhor alternativa clínica.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {steps.map((step) => (
+              <article className="rounded-lg border border-white/12 bg-white/[.04] p-5" key={step.title}>
+                <h3 className="text-lg font-extrabold text-white">{step.title}</h3>
+                <p className="mt-3 text-sm font-semibold leading-6 text-white/78">{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CampaignCta({
+  landing,
+  children,
+}: {
+  landing: LocalServiceLanding
+  children: React.ReactNode
+}) {
+  return (
+    <a
+      className="cta-shine mt-6 inline-flex min-h-14 w-full max-w-[380px] items-center justify-center gap-3 overflow-hidden rounded-lg bg-[#1fad58] px-6 text-base font-extrabold text-white shadow-[0_0_44px_rgba(32,201,103,.44)] transition hover:-translate-y-1"
+      data-google-ads-conversion="whatsappAppointment"
+      href={whatsappHref(`Olá. Gostaria de agendar uma avaliação sobre ${landing.label}.`)}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <MessageCircle className="size-5" />
+      {children}
+    </a>
   )
 }
 
@@ -716,6 +947,7 @@ function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <a
       className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
+      data-google-ads-conversion="whatsappAppointment"
       href={whatsappHref()}
       rel="noopener noreferrer"
       target="_blank"

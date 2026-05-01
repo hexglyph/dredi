@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 
 import { drediPages, servicePages } from "@/lib/dredi-data"
+import { localServiceLandings } from "@/lib/local-service-landings"
 import { absoluteUrl, canonicalPath, homeSeo, serviceSeo } from "@/lib/seo"
 
 export const dynamic = "force-static"
@@ -44,5 +45,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [absoluteUrl(homeSeo.image)],
   }
 
-  return [homeEntry, localLandingEntry, ...serviceEntries]
+  const localServiceEntries = localServiceLandings.map((landing) => {
+    const sourcePage = servicePages.find((page) => page.slug === landing.sourceSlug)
+    const seo = serviceSeo[landing.sourceSlug as keyof typeof serviceSeo]
+
+    return {
+      url: absoluteUrl(landing.path),
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.94,
+      images: sourcePage
+        ? [absoluteUrl(seo?.image ?? homeSeo.image), ...pageImages(sourcePage.images)]
+        : [absoluteUrl(seo?.image ?? homeSeo.image)],
+    }
+  })
+
+  return [homeEntry, localLandingEntry, ...localServiceEntries, ...serviceEntries]
 }

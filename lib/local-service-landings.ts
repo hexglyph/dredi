@@ -22,10 +22,10 @@ export const localServiceLandings = [
     sourceSlug: "implantes",
     path: "/implantes/campinas",
     label: "Implantes em Campinas",
-    title: "Implantes dentários em Campinas",
+    title: "Implantes Dentários em Campinas",
     description:
-      "Implantes dentários em Campinas com o Dr. Edi para recuperar dentes perdidos, mastigação, estética e segurança ao sorrir.",
-    heroTitle: "Implantes dentários em Campinas com planejamento do Dr. Edi.",
+      "Implantes dentários em Campinas com o Dr. Edi, especialista com mais de 10 mil implantes. Carga imediata, prótese protocolo e planejamento individual. Agende sua avaliação.",
+    heroTitle: "Implantes dentários em Campinas com o Dr. Edi, especialista com mais de 10 mil implantes realizados.",
     heroSubtitle:
       "Atendimento particular para quem quer recuperar dentes perdidos com avaliação, planejamento individual e opções de prótese sobre implante.",
     introTitle: "Recupere função e confiança com implantes planejados para o seu caso",
@@ -50,6 +50,9 @@ export const localServiceLandings = [
       "implante dentário Campinas",
       "dentista implante Campinas",
       "prótese protocolo Campinas",
+      "implante carga imediata Campinas",
+      "quanto custa implante dentário Campinas",
+      "melhor dentista implante Campinas",
     ],
   },
   {
@@ -57,9 +60,9 @@ export const localServiceLandings = [
     sourceSlug: "facetas-e-coroas",
     path: "/facetas/campinas",
     label: "Facetas em Campinas",
-    title: "Facetas dentárias em Campinas",
+    title: "Facetas Dentárias em Campinas",
     description:
-      "Facetas dentárias em Campinas para transformar a estética do sorriso com avaliação profissional, planejamento e naturalidade.",
+      "Facetas dentárias em Campinas: porcelana, resina e lentes de contato dental. Avaliação estética personalizada para transformar seu sorriso com naturalidade na Vida Odontologia.",
     heroTitle: "Facetas dentárias em Campinas para renovar a harmonia do sorriso.",
     heroSubtitle:
       "Avaliação estética com o Dr. Edi para entender cor, formato, proporção e melhor indicação entre facetas, coroas ou resina.",
@@ -84,7 +87,9 @@ export const localServiceLandings = [
       "facetas dentárias em Campinas",
       "facetas em Campinas",
       "facetas de porcelana Campinas",
+      "lentes de contato dental Campinas",
       "estética dental Campinas",
+      "quanto custa faceta dentária Campinas",
     ],
   },
   {
@@ -127,9 +132,9 @@ export const localServiceLandings = [
     sourceSlug: "proteses",
     path: "/proteses/campinas",
     label: "Próteses em Campinas",
-    title: "Próteses dentárias em Campinas",
+    title: "Próteses Dentárias em Campinas",
     description:
-      "Próteses dentárias em Campinas para recuperar mastigação, estética e confiança com planejamento do Dr. Edi.",
+      "Próteses dentárias em Campinas com o Dr. Edi, especialista em reabilitação oral. Prótese fixa, removível, total e sobre implante. Agende sua avaliação particular.",
     heroTitle: "Próteses dentárias em Campinas para recuperar seu sorriso.",
     heroSubtitle:
       "Avaliação particular para próteses fixas, removíveis, totais ou sobre implante, com planejamento funcional e estético.",
@@ -155,6 +160,8 @@ export const localServiceLandings = [
       "prótese dentária Campinas",
       "dentista prótese Campinas",
       "prótese protocolo Campinas",
+      "prótese sobre implante Campinas",
+      "especialista prótese dentária Campinas",
     ],
   },
   {
@@ -162,9 +169,9 @@ export const localServiceLandings = [
     sourceSlug: "clareamento",
     path: "/clareamento/campinas",
     label: "Clareamento em Campinas",
-    title: "Clareamento dental em Campinas",
+    title: "Clareamento Dental em Campinas",
     description:
-      "Clareamento dental em Campinas com avaliação profissional, técnica segura e acompanhamento para deixar o sorriso mais claro.",
+      "Clareamento dental profissional em Campinas com avaliação, técnica segura e acompanhamento. Dentes mais brancos com segurança na Vida Odontologia. Agende pelo WhatsApp.",
     heroTitle: "Clareamento dental em Campinas com acompanhamento profissional.",
     heroSubtitle:
       "Avaliação para indicar a técnica de clareamento mais adequada ao seu caso, com segurança e orientação sobre manutenção.",
@@ -190,6 +197,76 @@ export const localServiceLandings = [
       "clareamento dentário Campinas",
       "clareamento profissional Campinas",
       "dentes brancos Campinas",
+    ],
+  },
+  {
+    key: "endodontia-campinas",
+    sourceSlug: "endodontia",
+    path: "/endodontia/campinas",
+    label: "Endodontia em Campinas",
+    title: "Endodontia em Campinas",
+    description:
+      "Endodontia em Campinas para dor de dente, infecção, tratamento de canal e preservação do dente natural.",
+    heroTitle: "Endodontia em Campinas para tratar dor e preservar dentes naturais.",
+    heroSubtitle:
+      "Avaliação particular para investigar dor, sensibilidade, inflamação ou infecção e indicar o melhor tratamento endodôntico.",
+    introTitle: "Tratamento endodôntico com foco em diagnóstico e preservação dental",
+    intro:
+      "A endodontia trata problemas internos do dente, ajudando a eliminar infecções, aliviar sintomas e evitar perdas dentárias quando há indicação.",
+    benefits: [
+      {
+        title: "Diagnóstico da dor",
+        text: "Avaliação clínica para entender origem, intensidade e sinais associados ao dente afetado.",
+      },
+      {
+        title: "Tratamento de canal",
+        text: "Conduta indicada para remover infecção interna e preservar a estrutura do dente natural.",
+      },
+      {
+        title: "Atendimento em Campinas",
+        text: "Contato pelo WhatsApp para orientar sintomas e organizar a avaliação na Vida Odontologia.",
+      },
+    ],
+    keywords: [
+      "endodontia em Campinas",
+      "endodontista Campinas",
+      "tratamento endodôntico Campinas",
+      "tratamento de canal Campinas",
+    ],
+  },
+  {
+    key: "dentistica-campinas",
+    sourceSlug: "dentistica",
+    path: "/dentistica/campinas",
+    label: "Dentística em Campinas",
+    title: "Dentística em Campinas",
+    description:
+      "Dentística em Campinas para restaurações estéticas, resina, correções no sorriso e recuperação funcional dos dentes.",
+    heroTitle: "Dentística em Campinas para restaurar função e estética do sorriso.",
+    heroSubtitle:
+      "Atendimento para restaurações, resina, pequenas correções estéticas, desgaste dental e recuperação da harmonia do sorriso.",
+    introTitle: "Restaurações e correções estéticas com planejamento individual",
+    intro:
+      "A dentística une saúde, função e estética para restaurar dentes comprometidos, melhorar forma, fechar espaços e corrigir detalhes do sorriso.",
+    benefits: [
+      {
+        title: "Restauração estética",
+        text: "Correção de cáries, fraturas, desgastes e alterações de forma com foco em naturalidade.",
+      },
+      {
+        title: "Resina dentária",
+        text: "Opções conservadoras para melhorar contorno, proporção e harmonia do sorriso.",
+      },
+      {
+        title: "Avaliação completa",
+        text: "Análise da saúde bucal e indicação do tratamento mais adequado para cada dente.",
+      },
+    ],
+    keywords: [
+      "dentística em Campinas",
+      "restauração estética Campinas",
+      "resina dentária Campinas",
+      "dentista restauração Campinas",
     ],
   },
 ] as const satisfies readonly LocalServiceLanding[]

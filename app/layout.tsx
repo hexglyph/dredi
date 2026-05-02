@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Montserrat } from "next/font/google"
 import localFont from "next/font/local"
-import { Analytics } from "@vercel/analytics/next"
 
 import { GoogleAdsTag } from "@/components/google-ads-tag"
 import { businessProfile, defaultOgImage, homeSeo, siteName, siteUrl } from "@/lib/seo"
@@ -88,6 +87,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "BR-SP",
     "geo.placename": businessProfile.address.locality,
+    "geo.position": `${businessProfile.geo.latitude};${businessProfile.geo.longitude}`,
+    "ICBM": `${businessProfile.geo.latitude}, ${businessProfile.geo.longitude}`,
     "business:contact_data:street_address": businessProfile.address.streetAddress,
     "business:contact_data:locality": businessProfile.address.locality,
     "business:contact_data:region": businessProfile.address.region,
@@ -109,10 +110,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth">
+      <head>
+        <link rel="author" href={siteUrl} />
+        <link rel="me" href="https://www.instagram.com/doutoredi" />
+      </head>
       <body className={`${montserrat.variable} ${helloParis.variable} antialiased`}>
         {children}
         {process.env.NODE_ENV === "production" && <GoogleAdsTag />}
-        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   )

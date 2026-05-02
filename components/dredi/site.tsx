@@ -158,8 +158,8 @@ const clinicImages = [
 const headingHighlights =
   /(experiência|Dr\. Edi|melhor|sorriso|sintomas|facetas|coroas|próteses|implantes|clareamento|tratamento|vida|confiança|você)/gi
 
-export function whatsappHref(message = DEFAULT_MESSAGE) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+export function whatsappBridgeHref(message = DEFAULT_MESSAGE) {
+  return `/whatsapp/?mensagem=${encodeURIComponent(message)}`
 }
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
@@ -221,10 +221,7 @@ function SiteHeader() {
         <div className="hidden items-center gap-7 md:flex">
           <a
             className="inline-flex h-11 min-w-44 items-center justify-center rounded-md bg-[linear-gradient(135deg,#d6b95f,#b38b2e)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(184,145,49,.26)] transition hover:-translate-y-0.5"
-            data-google-ads-conversion="whatsappAppointment"
-            href={whatsappHref()}
-            rel="noopener noreferrer"
-            target="_blank"
+            href={whatsappBridgeHref()}
           >
             Agendar agora
             <span className="ml-2">›</span>
@@ -289,10 +286,7 @@ function FloatingWhatsApp() {
     <a
       aria-label="Abrir conversa no WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid size-16 place-items-center rounded-full border border-emerald-300/35 bg-[#20e47b] text-black shadow-[0_0_34px_rgba(32,228,123,.55)] transition hover:-translate-y-1 md:bottom-8 md:right-8"
-      data-google-ads-conversion="whatsappContact"
-      href={whatsappHref()}
-      rel="noopener noreferrer"
-      target="_blank"
+      href={whatsappBridgeHref()}
     >
       <WhatsAppIcon className="size-9 text-[#111]" />
     </a>
@@ -588,7 +582,7 @@ function CampaignHero({
           <h1 className="mt-7 text-balance text-[38px] font-black leading-[1.02] text-white md:text-[62px]">
             <HighlightedText text={landing.heroTitle} />
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-base font-bold leading-7 text-white md:text-lg">
+          <p className="mt-6 max-w-xl text-pretty text-base font-bold leading-7 text-white md:text-lg" data-speakable>
             {landing.heroSubtitle}
           </p>
           <div className="mt-8 grid max-w-2xl gap-3 text-sm font-bold text-white/92 sm:grid-cols-3">
@@ -717,10 +711,7 @@ function CampaignCta({
   return (
     <a
       className="cta-shine mt-6 inline-flex min-h-14 w-full max-w-[380px] items-center justify-center gap-3 overflow-hidden rounded-lg bg-[#1fad58] px-6 text-base font-extrabold text-white shadow-[0_0_44px_rgba(32,201,103,.44)] transition hover:-translate-y-1"
-      data-google-ads-conversion="whatsappAppointment"
-      href={whatsappHref(`Olá. Gostaria de agendar uma avaliação sobre ${landing.label}.`)}
-      rel="noopener noreferrer"
-      target="_blank"
+      href={whatsappBridgeHref(`Olá. Gostaria de agendar uma avaliação sobre ${landing.label}.`)}
     >
       <MessageCircle className="size-5" />
       {children}
@@ -856,7 +847,7 @@ function Hero({
           <h1 className="text-balance text-[34px] font-black leading-[1.05] text-white min-[390px]:text-[38px] md:text-[54px]">
             <HighlightedText text={title} />
           </h1>
-          <p className="mt-5 max-w-xl text-pretty text-[15px] font-bold leading-7 text-white md:mt-7 md:text-lg">
+          <p className="mt-5 max-w-xl text-pretty text-[15px] font-bold leading-7 text-white md:mt-7 md:text-lg" data-speakable>
             {subtitle}
           </p>
           <div className="mt-7 md:mt-10">
@@ -947,10 +938,7 @@ function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <a
       className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
-      data-google-ads-conversion="whatsappAppointment"
-      href={whatsappHref()}
-      rel="noopener noreferrer"
-      target="_blank"
+      href={whatsappBridgeHref()}
     >
       <ToothIcon className="size-5 fill-white" />
       {children}
@@ -1076,13 +1064,13 @@ function ClinicSection({ tone = "light" }: { tone?: "light" | "dark" }) {
 function LocalSearchSection() {
   const address = `${businessProfile.address.streetAddress}, ${businessProfile.address.locality} - ${businessProfile.address.region}`
   const serviceLinks = [
-    { href: "/implantes", label: "Implantes dentários" },
-    { href: "/proteses", label: "Próteses dentárias" },
-    { href: "/facetas-e-coroas", label: "Facetas e coroas" },
-    { href: "/clareamento", label: "Clareamento dental" },
-    { href: "/ortodontia", label: "Ortodontia" },
-    { href: "/endodontia", label: "Endodontia" },
-    { href: "/dentistica", label: "Dentística" },
+    { href: "/implantes/campinas", label: "Implantes dentários em Campinas" },
+    { href: "/proteses/campinas", label: "Próteses dentárias em Campinas" },
+    { href: "/facetas/campinas", label: "Facetas dentárias em Campinas" },
+    { href: "/clareamento/campinas", label: "Clareamento dental em Campinas" },
+    { href: "/ortodontia", label: "Ortodontia em Campinas" },
+    { href: "/canal/campinas", label: "Tratamento de canal em Campinas" },
+    { href: "/dentistica/campinas", label: "Dentística em Campinas" },
   ]
 
   return (
@@ -1095,34 +1083,37 @@ function LocalSearchSection() {
           <SectionTitle
             className="mt-4"
             id="dentista-campinas"
-            title="Dentista em Campinas para implantes, próteses e estética dental"
+            title="Dentista particular em Campinas para implantes, próteses e estética dental"
           />
-          <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black">
-            A Vida Odontologia Avançada e Estética atende pacientes de Campinas com avaliação odontológica,
-            planejamento personalizado e tratamentos para recuperar função, saúde e harmonia do sorriso.
+          <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black" data-speakable>
+            A Vida Odontologia Avançada e Estética é uma clínica odontológica particular em Campinas com mais de 20 anos
+            de experiência. O Dr. Edi é especialista em próteses e implantes, com mais de 10 mil implantes realizados.
+            Atendemos pacientes de toda Campinas e região com planejamento personalizado.
           </p>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           <article className="info-card-light corner-mark">
             <h3 className="text-xl font-extrabold">
-              Onde fica a clínica?
+              Onde fica a clínica odontológica?
             </h3>
             <p className="mt-4 text-sm font-semibold leading-6">
-              A clínica fica na {address}, CEP {businessProfile.address.postalCode}, com acesso pelo Jardim das Oliveiras.
+              A clínica fica na {address}, CEP {businessProfile.address.postalCode}, no Jardim das Oliveiras em
+              Campinas. Atendemos pacientes de Barão Geraldo, Cambuí, Taquaral, Sousas e toda a região.
             </p>
           </article>
           <article className="info-card-light corner-mark">
-            <h3 className="text-xl font-extrabold">Quais tratamentos estão disponíveis?</h3>
+            <h3 className="text-xl font-extrabold">Quais tratamentos o dentista oferece?</h3>
             <p className="mt-4 text-sm font-semibold leading-6">
-              O atendimento reúne implantes, próteses, facetas, coroas, clareamento, ortodontia, endodontia e dentística.
+              Implantes dentários, próteses dentárias (fixa, removível, protocolo), facetas de porcelana, lentes de
+              contato dental, clareamento profissional, ortodontia, tratamento de canal e restaurações estéticas.
             </p>
           </article>
           <article className="info-card-light corner-mark">
-            <h3 className="text-xl font-extrabold">Como agendar uma avaliação?</h3>
+            <h3 className="text-xl font-extrabold">Como agendar consulta com dentista em Campinas?</h3>
             <p className="mt-4 text-sm font-semibold leading-6">
-              O agendamento pode ser feito pelo WhatsApp {businessProfile.whatsappDisplay} ou pelo telefone{" "}
-              {businessProfile.telephoneDisplay}.
+              Agende pelo WhatsApp {businessProfile.whatsappDisplay} ou telefone {businessProfile.telephoneDisplay}.
+              Atendimento de segunda a sexta, das 8h às 18h. Consulta particular com avaliação personalizada.
             </p>
           </article>
         </div>
@@ -1343,3 +1334,4 @@ function ToothIcon({ className }: { className?: string }) {
     </svg>
   )
 }
+

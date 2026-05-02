@@ -18,6 +18,7 @@ import {
   buildWebPageSchema,
   buildWebsiteSchema,
 } from "@/components/dredi/structured-data"
+import { WhatsAppLink } from "@/components/whatsapp-link"
 import { businessProfile, createPageMetadata } from "@/lib/seo"
 
 const pageTitle = "Agende pelo WhatsApp"
@@ -195,20 +196,17 @@ export default function WhatsAppPage() {
                 "Ortodontia",
                 "Tratamento de canal",
               ].map((service) => (
-                <a
+                <WhatsAppLink
                   className="corner-mark rounded-lg border border-[rgba(184,145,49,.28)] bg-white/[.035] p-6 text-left text-lg font-extrabold text-white transition hover:-translate-y-1 hover:border-[var(--gold)] hover:bg-white/[.06]"
-                  data-google-ads-conversion="whatsappAppointment"
                   href={createWhatsAppHref(`Olá. Vim pela campanha e gostaria de saber mais sobre ${service}.`)}
                   key={service}
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
                   {service}
                   <span className="mt-4 flex items-center gap-2 text-sm font-bold text-[var(--gold-soft)]">
                     <MessageCircle className="size-4" />
                     Conversar agora
                   </span>
-                </a>
+                </WhatsAppLink>
               ))}
             </div>
           </div>
@@ -276,15 +274,13 @@ export default function WhatsAppPage() {
         </footer>
 
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/12 bg-[#101010]/94 p-3 backdrop-blur md:hidden">
-          <a
+          <WhatsAppLink
             className="cta-shine flex min-h-14 items-center justify-center gap-3 overflow-hidden rounded-lg bg-[#1fad58] px-5 text-base font-extrabold text-white shadow-[0_0_34px_rgba(32,201,103,.45)]"
             href={defaultHref}
-            rel="noopener noreferrer"
-            target="_blank"
           >
             <MessageCircle className="relative z-10 size-5" />
             <span className="relative z-10">Chamar no WhatsApp</span>
-          </a>
+          </WhatsAppLink>
         </div>
       </main>
     </>
@@ -293,16 +289,13 @@ export default function WhatsAppPage() {
 
 function WhatsAppButton({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a
+    <WhatsAppLink
       className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
-      data-google-ads-conversion="whatsappAppointment"
       href={href}
-      rel="noopener noreferrer"
-      target="_blank"
     >
       <MessageCircle className="size-5" />
       {children}
-    </a>
+    </WhatsAppLink>
   )
 }
 

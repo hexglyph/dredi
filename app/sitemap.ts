@@ -6,7 +6,7 @@ import { absoluteUrl, canonicalPath, homeSeo, serviceSeo } from "@/lib/seo"
 
 export const dynamic = "force-static"
 
-const lastModified = new Date("2026-05-01")
+const lastModified = new Date("2026-05-02")
 
 function pageImages(images: readonly string[]) {
   return images

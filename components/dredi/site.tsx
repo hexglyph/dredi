@@ -29,19 +29,18 @@ import {
 } from "./structured-data"
 import { CarouselStrip } from "./carousel-strip"
 
-const WHATSAPP_NUMBER = "5519971710013"
 const DEFAULT_MESSAGE =
-  "Olá. Gostaria de saber mais sobre os serviços que vi no seu site."
+  "Olá. Quero avaliar meu caso e entender o melhor tratamento para recuperar meu sorriso."
 
 const LOGO_GOLD = "/site-assets/2025/01/VIDA-S_FUNDO-DOURADA.webp"
-const LOGO_WHITE = "/site-assets/2025/03/Logo-vida-brnaca.webp"
 const DOCTOR_PHOTO = "/site-assets/2025/09/Dr-Edi-foto.webp"
 
 const navTreatments = [
   { label: "Implantes", href: "/implantes" },
+  { label: "Reabilitação oral", href: "/reabilitacao-oral/campinas" },
   { label: "Facetas e Coroas", href: "/facetas-e-coroas" },
   { label: "Clareamento", href: "/clareamento" },
-  { label: "Proteses", href: "/proteses" },
+  { label: "Próteses", href: "/proteses" },
   { label: "Ortodontia", href: "/ortodontia" },
   { label: "Endodontia", href: "/endodontia" },
   { label: "Dentística", href: "/dentistica" },
@@ -84,34 +83,82 @@ const heroAssets: Record<string, { desktop: string; mobile?: string }> = {
 
 const treatmentCards = [
   {
-    title: "Dentística",
-    href: "/dentistica",
-    image: "/site-assets/2025/03/Restauracao-300x300.webp",
-    text: "Cuidados estéticos e funcionais para sua saúde bucal.",
-  },
-  {
-    title: "Clareamento",
-    href: "/clareamento",
-    image: "/site-assets/2025/03/Clareamento-300x300.webp",
-    text: "Dentes mais brancos e radiantes com segurança.",
-  },
-  {
-    title: "Próteses",
-    href: "/proteses",
-    image: "/site-assets/2025/03/Protese-300x300.webp",
-    text: "Restaure a função e a estética do seu sorriso.",
-  },
-  {
     title: "Implantes dentários",
     href: "/implantes",
     image: "/site-assets/2025/01/Implantes-resultados-4-300x300.webp",
-    text: "A solução definitiva para substituir dentes perdidos.",
+    text: "Planejamento para substituir dentes perdidos com foco em função, estética e conforto.",
+  },
+  {
+    title: "Prótese protocolo",
+    href: "/proteses",
+    image: "/site-assets/2025/03/Protese-300x300.webp",
+    text: "Prótese fixa sobre implantes para reabilitar arcadas completas com estabilidade.",
+  },
+  {
+    title: "Reabilitação oral completa",
+    href: "/reabilitacao-oral/campinas",
+    image: "/site-assets/2025/01/Sorriso-perfeito-300x300.webp",
+    text: "Planejamento integrado para recuperar mastigação, estética, conforto e confiança.",
   },
   {
     title: "Facetas e coroas",
     href: "/facetas-e-coroas",
     image: "/site-assets/2025/03/Facetas-4-300x300.webp",
-    text: "Transformação estética para um sorriso impecável.",
+    text: "Tratamentos estéticos para transformar o sorriso com naturalidade, proporção e planejamento.",
+  },
+  {
+    title: "Clareamento dental",
+    href: "/clareamento",
+    image: "/site-assets/2025/03/Clareamento-300x300.webp",
+    text: "Clareamento dental profissional para melhorar a tonalidade dos dentes com acompanhamento.",
+  },
+  {
+    title: "Tratamento de canal",
+    href: "/endodontia",
+    image: "/site-assets/2026/03/Dr-Edi-banner-8-scaled.jpg",
+    text: "Endodontia para tratar dor, infecção e preservar dentes naturais quando há indicação.",
+  },
+  {
+    title: "Dentística restauradora",
+    href: "/dentistica",
+    image: "/site-assets/2025/03/Restauracao-300x300.webp",
+    text: "Restaurações e correções com foco em saúde, função e naturalidade.",
+  },
+  {
+    title: "Ortodontia",
+    href: "/ortodontia",
+    image: "/site-assets/2025/05/Ortodontia-300x300.webp",
+    text: "Planejamento para alinhamento dental, mordida e harmonia do sorriso.",
+  },
+]
+
+const authorityProofs = [
+  { value: "+20", label: "anos de experiência" },
+  { value: "+10 mil", label: "implantes realizados" },
+  { value: "Unicamp + UNESP", label: "formação e especialização" },
+]
+
+const patientPainPoints = [
+  "Evita sorrir em fotos?",
+  "Tem dificuldade para mastigar?",
+  "Usa dentadura ou prótese solta?",
+  "Perdeu um ou mais dentes?",
+  "Tem vergonha do sorriso?",
+  "Quer voltar a sorrir com segurança?",
+]
+
+const textTestimonials = [
+  {
+    quote: "Voltei a mastigar melhor e sorrir com confiança.",
+    label: "Paciente de implantes dentários - Campinas/SP",
+  },
+  {
+    quote: "Recebi um planejamento claro e entendi cada etapa do tratamento.",
+    label: "Paciente de reabilitação oral - Campinas/SP",
+  },
+  {
+    quote: "O resultado ficou natural e me deixou mais segura para sorrir.",
+    label: "Paciente de estética dental - Campinas/SP",
   },
 ]
 
@@ -223,7 +270,7 @@ function SiteHeader() {
             className="inline-flex h-11 min-w-44 items-center justify-center rounded-md bg-[linear-gradient(135deg,#d6b95f,#b38b2e)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(184,145,49,.26)] transition hover:-translate-y-0.5"
             href={whatsappBridgeHref()}
           >
-            Agendar agora
+            Quero avaliar meu caso
             <span className="ml-2">›</span>
           </a>
           <div className="flex items-center gap-4 text-[var(--gold-soft)]">
@@ -316,20 +363,24 @@ export function HomePage({ page }: { page: DrediPage }) {
       />
       <SiteShell>
         <Hero
-          cta="Agendar agora"
+          cta="Agendar avaliação pelo WhatsApp"
+          ctaMessage="Olá. Quero agendar uma avaliação para implantes, próteses ou reabilitação oral."
           image={heroAssets.home.desktop}
           mobileImage={heroAssets.home.mobile}
-          subtitle="Nossa clínica oferece tratamentos completos para deixar seu sorriso mais bonito, saudável e funcional."
-          title="Confiança, experiência e cuidado em cada sorriso com o Dr. Edi."
+          subtitle="Atendimento particular para quem deseja recuperar mastigação, estética e confiança ao sorrir com planejamento personalizado e cuidado multidisciplinar."
+          title="Implantes, próteses e reabilitação oral em Campinas com mais de 20 anos de experiência"
         />
+
+        <AuthorityProofSection />
+        <PainPointsSection />
 
         <section className="defer-render dark-section py-16 md:py-28">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <p className="mx-auto max-w-3xl text-base font-semibold text-white">
-              Seja para recuperar um dente perdido, melhorar a estética ou cuidar da sua saúde bucal...
+              O foco da clínica é resolver casos que envolvem perda dental, próteses, estética e reabilitação oral com planejamento individual.
             </p>
-            <SectionTitle className="mt-8" title="Temos a solução ideal para você!" />
-            <div className="mt-14 grid gap-5 md:grid-cols-5">
+            <SectionTitle className="mt-8" title="Tratamentos para recuperar função, estética e segurança ao sorrir" />
+            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {treatmentCards.map((card) => (
                 <Link className="treatment-card corner-mark text-left" href={card.href} key={card.href}>
                   <div className="relative aspect-square overflow-hidden rounded-md">
@@ -349,10 +400,10 @@ export function HomePage({ page }: { page: DrediPage }) {
               ))}
             </div>
             <p className="mt-16 text-base font-semibold text-white">
-              Escolha o tratamento ideal para você e agende uma avaliação!
+              A avaliação mostra qual caminho faz sentido para o seu caso clínico e para sua expectativa.
             </p>
             <div className="mt-8 flex justify-center">
-              <CtaButton>Agendar agora</CtaButton>
+              <CtaButton message="Olá. Quero saber se posso fazer implante ou reabilitação oral.">Quero saber se posso fazer implante</CtaButton>
             </div>
           </div>
         </section>
@@ -363,19 +414,16 @@ export function HomePage({ page }: { page: DrediPage }) {
           title="Histórias reais de transformação"
         />
 
-        <GallerySection
-          images={feedbackImages}
-          intro="A satisfação dos nossos pacientes é nossa motivação."
-          title="Confira os Depoimentos:"
-        />
+        <TestimonialSection />
 
         <AboutDoctor />
         <ClinicSection tone="dark" />
         <LocalSearchSection />
         <CtaSection
           dark
-          text="Agende uma avaliação e descubra a melhor solução para você."
-          title="Não deixe que a falta de um sorriso completo limite sua vida."
+          cta="Quero recuperar meu sorriso"
+          text="Agende uma avaliação e descubra o melhor plano para recuperar mastigação, estética e confiança ao sorrir."
+          title="Casos complexos pedem planejamento, experiência e cuidado próximo."
         />
         <FAQSection faqs={faq} />
       </SiteShell>
@@ -441,7 +489,7 @@ export function DentistCampinasPage({ page }: { page: DrediPage }) {
                 },
                 {
                   title: "Tratamentos completos",
-                  text: "Implantes, próteses, facetas, coroas, clareamento, endodontia, ortodontia e dentística.",
+                  text: "Implantes, próteses, reabilitação oral, facetas, coroas, clareamento, endodontia, ortodontia e dentística.",
                 },
                 {
                   title: "Clínica em Campinas",
@@ -464,7 +512,7 @@ export function DentistCampinasPage({ page }: { page: DrediPage }) {
         <section className="defer-render dark-section py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <SectionTitle title="Escolha o tratamento que você procura" />
-            <div className="mt-12 grid gap-5 md:grid-cols-5">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {treatmentCards.map((card) => (
                 <Link className="treatment-card corner-mark text-left" href={card.href} key={card.href}>
                   <div className="relative aspect-square overflow-hidden rounded-md">
@@ -605,7 +653,7 @@ function CampaignHero({
           <p className="mt-4 text-sm font-semibold leading-6 text-white/84">
             Explique seu caso pelo WhatsApp e receba orientação para marcar uma consulta na clínica.
           </p>
-          <CampaignCta landing={landing}>Chamar no WhatsApp</CampaignCta>
+          <CampaignCta landing={landing}>Quero avaliar meu caso</CampaignCta>
           <a
             className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md border border-white/20 px-5 text-sm font-extrabold text-white transition hover:border-[var(--gold)]"
             href="tel:+551932760525"
@@ -828,12 +876,14 @@ function Hero({
   title,
   subtitle,
   cta,
+  ctaMessage,
   image,
   mobileImage,
 }: {
   title: string
   subtitle: string
   cta: string
+  ctaMessage?: string
   image: string
   mobileImage?: string
 }) {
@@ -851,7 +901,7 @@ function Hero({
             {subtitle}
           </p>
           <div className="mt-7 md:mt-10">
-            <CtaButton>{cta}</CtaButton>
+            <CtaButton message={ctaMessage}>{cta}</CtaButton>
           </div>
         </div>
       </div>
@@ -934,15 +984,108 @@ function HighlightedText({ text }: { text: string }) {
   )
 }
 
-function CtaButton({ children }: { children: React.ReactNode }) {
+function CtaButton({
+  children,
+  message,
+}: {
+  children: React.ReactNode
+  message?: string
+}) {
   return (
     <a
       className="cta-shine inline-flex min-h-16 w-full max-w-[380px] items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#1fad58] px-7 text-base font-extrabold text-white shadow-[0_0_52px_rgba(32,201,103,.48)] transition hover:-translate-y-1 md:text-lg"
-      href={whatsappBridgeHref()}
+      href={whatsappBridgeHref(message)}
     >
       <ToothIcon className="size-5 fill-white" />
       {children}
     </a>
+  )
+}
+
+function AuthorityProofSection() {
+  return (
+    <section className="light-section py-10 md:py-14" aria-label="Autoridade do Dr. Edi">
+      <div className="mx-auto grid max-w-6xl gap-4 px-4 sm:grid-cols-3">
+        {authorityProofs.map((proof) => (
+          <article className="info-card-light corner-mark min-h-0 py-7 text-center" key={proof.label}>
+            <p className="text-4xl font-black leading-none text-[var(--gold-dark)] md:text-5xl">{proof.value}</p>
+            <p className="mt-3 text-sm font-extrabold uppercase tracking-[0.12em] text-black">{proof.label}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function PainPointsSection() {
+  return (
+    <section className="defer-render light-section py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+            Você se identifica?
+          </p>
+          <SectionTitle
+            className="mt-4"
+            title="A reabilitação começa quando o sorriso deixa de limitar sua rotina"
+          />
+          <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black">
+            Pacientes que procuram implantes, próteses e reabilitação oral geralmente chegam com dúvidas parecidas. A
+            avaliação serve para entender a causa, o grau de complexidade e as alternativas possíveis.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {patientPainPoints.map((point) => (
+            <div
+              className="flex min-h-20 items-center gap-4 rounded-md border border-[rgba(184,145,49,.2)] bg-[#fbfaf7] px-5 py-4 text-base font-extrabold text-black"
+              key={point}
+            >
+              <CheckCircle2 className="size-6 shrink-0 fill-[var(--gold)] text-white" />
+              {point}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <CtaButton message="Olá. Quero avaliar meu caso e descobrir o melhor plano para recuperar meu sorriso.">
+            Quero avaliar meu caso
+          </CtaButton>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function TestimonialSection() {
+  return (
+    <section className="defer-render light-section py-16 md:py-28">
+      <div className="mx-auto max-w-6xl px-4 text-center">
+        <SectionTitle title="Depoimentos de pacientes" />
+        <p className="mx-auto mt-8 max-w-3xl text-base font-semibold leading-7 text-black">
+          Além dos registros em imagem, estes relatos ajudam a entender como o tratamento impacta mastigação, segurança e
+          confiança no dia a dia.
+        </p>
+        <div className="mt-12">
+          <CarouselStrip images={feedbackImages} title="Depoimentos em imagem" tone="light" />
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {textTestimonials.map((testimonial) => (
+            <article className="info-card-light corner-mark text-left" key={testimonial.quote}>
+              <p className="text-xl font-black leading-7 text-black">&ldquo;{testimonial.quote}&rdquo;</p>
+              <p className="mt-5 text-sm font-extrabold uppercase tracking-[0.1em] text-[var(--gold-dark)]">
+                {testimonial.label}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 flex justify-center">
+          <CtaButton message="Olá. Quero falar com a equipe pelo WhatsApp e agendar uma avaliação.">
+            Falar com a equipe pelo WhatsApp
+          </CtaButton>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -970,7 +1113,7 @@ function GallerySection({
           <CarouselStrip images={images} title={title} tone={dark ? "dark" : "light"} />
         </div>
         <div className="mt-8 flex justify-center">
-          <CtaButton>Agendar agora</CtaButton>
+          <CtaButton>Quero avaliar meu caso</CtaButton>
         </div>
       </div>
     </section>
@@ -1028,7 +1171,7 @@ function ClinicSection({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <section className={dark ? "defer-render dark-section py-16 md:py-28" : "defer-render light-section py-16 md:py-28"} id="localizacao">
       <div className="mx-auto max-w-6xl px-4 text-center">
-        <SectionTitle title="Conheça a clínica vida mais!" />
+        <SectionTitle title="Conheça a Clínica Vida Mais" />
         <p className={`mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 ${dark ? "text-white" : "text-black"}`}>
           Um lugar onde você será bem atendido, por uma equipe treinada e qualificada!
         </p>
@@ -1066,7 +1209,8 @@ function LocalSearchSection() {
   const serviceLinks = [
     { href: "/implantes/campinas", label: "Implantes dentários em Campinas" },
     { href: "/proteses/campinas", label: "Próteses dentárias em Campinas" },
-    { href: "/facetas/campinas", label: "Facetas dentárias em Campinas" },
+    { href: "/reabilitacao-oral/campinas", label: "Reabilitação oral em Campinas" },
+    { href: "/facetas/campinas", label: "Facetas e coroas dentárias em Campinas" },
     { href: "/clareamento/campinas", label: "Clareamento dental em Campinas" },
     { href: "/ortodontia", label: "Ortodontia em Campinas" },
     { href: "/canal/campinas", label: "Tratamento de canal em Campinas" },
@@ -1131,7 +1275,7 @@ function LocalSearchSection() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <CtaButton>Agendar agora</CtaButton>
+          <CtaButton>Agendar avaliação odontológica</CtaButton>
         </div>
       </div>
     </section>
@@ -1142,7 +1286,7 @@ function CtaSection({
   title,
   text,
   dark = false,
-  cta = "Agendar agora",
+  cta = "Quero avaliar meu caso",
 }: {
   title: string
   text?: string
@@ -1334,4 +1478,3 @@ function ToothIcon({ className }: { className?: string }) {
     </svg>
   )
 }
-

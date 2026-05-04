@@ -111,7 +111,7 @@ export default function WhatsAppPage() {
                 próteses, facetas, clareamento, ortodontia, endodontia ou dentística.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <WhatsAppButton href={defaultHref}>Chamar no WhatsApp</WhatsAppButton>
+                <WhatsAppButton href={defaultHref}>Falar com a equipe pelo WhatsApp</WhatsAppButton>
                 <a
                   className="inline-flex min-h-16 items-center justify-center gap-3 rounded-lg border border-white/24 bg-black/25 px-7 text-base font-extrabold text-white backdrop-blur transition hover:-translate-y-1 hover:border-[var(--gold)]"
                   href="tel:+551932760525"
@@ -264,7 +264,7 @@ export default function WhatsAppPage() {
               Clique no botão abaixo e envie uma mensagem para iniciar seu atendimento pelo WhatsApp.
             </p>
             <div className="mt-9 flex justify-center">
-              <WhatsAppButton href={defaultHref}>Chamar no WhatsApp</WhatsAppButton>
+              <WhatsAppButton href={defaultHref}>Falar com a equipe pelo WhatsApp</WhatsAppButton>
             </div>
           </div>
         </section>
@@ -279,7 +279,7 @@ export default function WhatsAppPage() {
             href={defaultHref}
           >
             <MessageCircle className="relative z-10 size-5" />
-            <span className="relative z-10">Chamar no WhatsApp</span>
+            <span className="relative z-10">Falar com a equipe</span>
           </WhatsAppLink>
         </div>
       </main>

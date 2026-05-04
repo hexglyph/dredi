@@ -64,7 +64,10 @@ export const localKeywords = [
   "implante dentário em Campinas",
   "próteses dentárias Campinas",
   "prótese dentária em Campinas",
+  "prótese protocolo em Campinas",
   "facetas dentárias Campinas",
+  "facetas de porcelana em Campinas",
+  "coroas dentárias em Campinas",
   "lentes de contato dental Campinas",
   "clareamento dental Campinas",
   "clareamento dentário Campinas",
@@ -74,6 +77,8 @@ export const localKeywords = [
   "dentística Campinas",
   "estética dental Campinas",
   "reabilitação oral Campinas",
+  "reabilitação oral completa Campinas",
+  "dentista especialista em implantes em Campinas",
 ] as const
 
 export type ServiceSeo = {
@@ -128,7 +133,7 @@ export const serviceSeo = {
     serviceType: "Clareamento dental",
     title: "Clareamento Dental em Campinas",
     description:
-      "Clareamento dental profissional em Campinas com técnica segura e acompanhamento odontológico. Resultados visíveis para dentes mais brancos. Agende sua avaliação na Vida Odontologia.",
+      "Clareamento dental profissional em Campinas com técnica segura e acompanhamento odontológico para melhorar a tonalidade dos dentes. Agende sua avaliação na Vida Odontologia.",
     keywords: [
       "clareamento dental em Campinas",
       "clareamento dentário Campinas",
@@ -211,9 +216,9 @@ export const serviceSeo = {
 } as const satisfies Record<string, ServiceSeo>
 
 export const homeSeo = {
-  title: "Dentista em Campinas",
+  title: "Implantes, Próteses e Reabilitação Oral em Campinas",
   description:
-    "Dentista particular em Campinas. Especialista em implantes, próteses e estética dental. Mais de 20 anos de experiência e 10 mil implantes realizados. Agende sua avaliação na Vida Odontologia com o Dr. Edi.",
+    "Implantes, próteses e reabilitação oral em Campinas com o Dr. Edi. Mais de 20 anos de experiência, mais de 10 mil implantes realizados e atendimento particular na Vida Odontologia.",
   keywords: localKeywords,
   image: defaultOgImage,
 } as const

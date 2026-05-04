@@ -1,11 +1,14 @@
 import Script from "next/script"
 
 const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 const whatsappContactLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_CONTACT_LABEL
 const whatsappAppointmentLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_APPOINTMENT_LABEL
 
 export function GoogleAdsTag() {
-  if (!adsId) return null
+  if (!adsId && !gaId) return null
+
+  const primaryId = gaId || adsId
 
   const conversions = {
     whatsappContact: whatsappContactLabel ? `${adsId}/${whatsappContactLabel}` : "",
@@ -14,22 +17,20 @@ export function GoogleAdsTag() {
 
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`} strategy="afterInteractive" />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${primaryId}`} strategy="afterInteractive" />
       <Script id="google-ads-tag" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${adsId}', {
-            allow_enhanced_conversions: true,
-            conversion_linker: true
-          });
           gtag('consent', 'default', {
             ad_storage: 'granted',
             ad_user_data: 'granted',
             ad_personalization: 'granted',
             analytics_storage: 'granted'
           });
+          ${gaId ? `gtag('config', '${gaId}', { send_page_view: true });` : ""}
+          ${adsId ? `gtag('config', '${adsId}', { allow_enhanced_conversions: true, conversion_linker: true });` : ""}
 
           window.drediGoogleAdsConversions = ${JSON.stringify(conversions)};
 

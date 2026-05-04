@@ -165,13 +165,52 @@ export const localServiceLandings = [
     ],
   },
   {
+    key: "reabilitacao-oral-campinas",
+    sourceSlug: "proteses",
+    path: "/reabilitacao-oral/campinas",
+    label: "Reabilitação oral em Campinas",
+    title: "Reabilitação Oral Completa em Campinas",
+    description:
+      "Reabilitação oral completa em Campinas com planejamento integrado para recuperar mastigação, estética, conforto e confiança ao sorrir. Atendimento particular com o Dr. Edi.",
+    heroTitle: "Reabilitação oral completa em Campinas com planejamento integrado.",
+    heroSubtitle:
+      "Atendimento particular para casos que podem envolver implantes, próteses, coroas, ajustes de mordida e estética dental com foco em função e naturalidade.",
+    introTitle: "Um plano completo para recuperar mastigação, estética e segurança",
+    intro:
+      "A reabilitação oral avalia dentes ausentes, próteses antigas, desgaste, mordida, gengiva, estética e expectativa do paciente para definir uma estratégia personalizada.",
+    benefits: [
+      {
+        title: "+20 anos de experiência",
+        text: "O Dr. Edi atua em casos de próteses, implantes e reabilitação oral com planejamento individual.",
+      },
+      {
+        title: "Casos complexos",
+        text: "Indicação integrada entre implantes, prótese protocolo, coroas, facetas e ajustes funcionais quando necessário.",
+      },
+      {
+        title: "Atendimento particular",
+        text: "Consulta em Campinas para explicar etapas, alternativas, exames e prioridades de tratamento com clareza.",
+      },
+    ],
+    keywords: [
+      "reabilitação oral em Campinas",
+      "reabilitação oral completa Campinas",
+      "dentista reabilitação oral Campinas",
+      "implantes e próteses Campinas",
+      "prótese protocolo Campinas",
+      "coroas dentárias Campinas",
+      "dentista especialista em implantes em Campinas",
+      "clínica odontológica particular em Campinas",
+    ],
+  },
+  {
     key: "clareamento-campinas",
     sourceSlug: "clareamento",
     path: "/clareamento/campinas",
     label: "Clareamento em Campinas",
     title: "Clareamento Dental em Campinas",
     description:
-      "Clareamento dental profissional em Campinas com avaliação, técnica segura e acompanhamento. Dentes mais brancos com segurança na Vida Odontologia. Agende pelo WhatsApp.",
+      "Clareamento dental profissional em Campinas com avaliação, técnica segura e acompanhamento para melhorar a tonalidade dos dentes. Agende pelo WhatsApp.",
     heroTitle: "Clareamento dental em Campinas com acompanhamento profissional.",
     heroSubtitle:
       "Avaliação para indicar a técnica de clareamento mais adequada ao seu caso, com segurança e orientação sobre manutenção.",

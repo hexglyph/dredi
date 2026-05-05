@@ -11,3 +11,4 @@ Creating turbopack project { dir: 'C:\\Github\\dredir', testMode: true }
 
  GET / 200 in 625ms (next.js: 119ms, application-code: 506ms)
  GET /reabilitacao-oral/campinas/ 200 in 388ms (next.js: 196ms, application-code: 192ms)
+[?25h

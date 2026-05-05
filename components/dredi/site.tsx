@@ -15,7 +15,9 @@ import {
 
 import type { DrediPage } from "@/lib/dredi-data"
 import type { LocalServiceLanding } from "@/lib/local-service-landings"
+import type { ServiceGallery } from "@/lib/service-gallery-data"
 import { absoluteUrl, businessProfile, getServiceSeo, homeSeo } from "@/lib/seo"
+import { getServiceGalleriesByHref, serviceGalleries } from "@/lib/service-gallery-data"
 import {
   JsonLd,
   buildBreadcrumbSchema,
@@ -44,6 +46,13 @@ const navTreatments = [
   { label: "Ortodontia", href: "/ortodontia" },
   { label: "Endodontia", href: "/endodontia" },
   { label: "Dentística", href: "/dentistica" },
+]
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/doutoredi", Icon: Instagram },
+  { label: "TikTok", href: "https://www.tiktok.com", Icon: Music2 },
+  { label: "Facebook", href: "https://www.facebook.com", Icon: Facebook },
+  { label: "YouTube", href: "https://youtube.com", Icon: Youtube },
 ]
 
 const heroAssets: Record<string, { desktop: string; mobile?: string }> = {
@@ -173,6 +182,10 @@ const resultImages = [
   "/site-assets/2025/03/Restauracao-300x300.webp",
 ]
 
+const homeOptimizedResultImages = serviceGalleries.flatMap((gallery) =>
+  gallery.images.slice(0, 2).map((image) => image.src),
+)
+
 const feedbackImages = [
   "/site-assets/2025/03/Feedbacks-dr-Edi-1-1.webp",
   "/site-assets/2025/03/Feedbacks-dr-Edi-8-1.webp",
@@ -274,18 +287,11 @@ function SiteHeader() {
             <span className="ml-2">›</span>
           </a>
           <div className="flex items-center gap-4 text-[var(--gold-soft)]">
-            <a aria-label="Instagram" href="https://www.instagram.com/doutoredi" target="_blank" rel="noopener noreferrer">
-              <Instagram className="size-5" />
-            </a>
-            <a aria-label="TikTok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-              <Music2 className="size-5" />
-            </a>
-            <a aria-label="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <Facebook className="size-5" />
-            </a>
-            <a aria-label="YouTube" href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-              <Youtube className="size-5" />
-            </a>
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a aria-label={label} href={href} key={label} target="_blank" rel="noopener noreferrer">
+                <Icon className="size-5" />
+              </a>
+            ))}
           </div>
         </div>
 
@@ -308,6 +314,29 @@ function SiteHeader() {
             <Link className="mobile-link" href="/#localizacao">
               Localização
             </Link>
+            <div className="mt-3 border-t border-[rgba(184,145,49,.24)] pt-4">
+              <a
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-[linear-gradient(135deg,#d6b95f,#b38b2e)] px-4 text-sm font-extrabold text-white shadow-[0_8px_20px_rgba(184,145,49,.2)]"
+                href={whatsappBridgeHref()}
+              >
+                Quero avaliar meu caso
+                <span className="ml-2">›</span>
+              </a>
+              <div className="mt-4 flex items-center justify-center gap-3 text-[var(--gold-soft)]">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    aria-label={label}
+                    className="grid size-11 place-items-center rounded-md border border-[rgba(184,145,49,.24)] bg-white/[.03]"
+                    href={href}
+                    key={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon className="size-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </details>
       </div>
@@ -409,7 +438,7 @@ export function HomePage({ page }: { page: DrediPage }) {
         </section>
 
         <GallerySection
-          images={resultImages}
+          images={homeOptimizedResultImages.length ? homeOptimizedResultImages : resultImages}
           intro="Nossos pacientes já passaram por essa jornada e hoje são prova de que é possível ter um sorriso bonito e funcional novamente."
           title="Histórias reais de transformação"
         />
@@ -419,6 +448,7 @@ export function HomePage({ page }: { page: DrediPage }) {
         <AboutDoctor />
         <ClinicSection tone="dark" />
         <LocalSearchSection />
+        <ServicePhotoSections serviceHref="/" />
         <CtaSection
           dark
           cta="Quero recuperar meu sorriso"
@@ -431,7 +461,15 @@ export function HomePage({ page }: { page: DrediPage }) {
   )
 }
 
-export function DentistCampinasPage({ page }: { page: DrediPage }) {
+export function DentistCampinasPage({
+  page,
+  path = "/dentista/campinas",
+  label = "Dentista em Campinas",
+}: {
+  page: DrediPage
+  path?: string
+  label?: string
+}) {
   const faq = parseFaq(page.text)
 
   return (
@@ -442,18 +480,18 @@ export function DentistCampinasPage({ page }: { page: DrediPage }) {
           buildPersonSchema(),
           buildWebsiteSchema(),
           buildWebPageSchema({
-            path: "/dentista/campinas",
-            title: "Dentista em Campinas",
+            path,
+            title: label,
             description:
               "Dentista em Campinas para avaliação odontológica particular, implantes, próteses, facetas, clareamento e tratamento de canal.",
             image: heroAssets.home.desktop,
           }),
-          buildBreadcrumbSchema("/dentista/campinas", [
+          buildBreadcrumbSchema(path, [
             { name: "Início", path: "/" },
-            { name: "Dentista em Campinas", path: "/dentista/campinas" },
+            { name: label, path },
           ]),
           buildServiceItemListSchema(),
-          buildFaqSchema("/dentista/campinas", faq),
+          buildFaqSchema(path, faq),
         ]}
       />
       <SiteShell>
@@ -552,7 +590,7 @@ export function LocalServiceLandingPage({
 }) {
   const faq = parseFaq(page.text)
   const hero = heroAssets[landing.sourceSlug] ?? heroAssets.home
-  const gallery = getGalleryImages(page)
+  const gallery = getOptimizedServiceImages(`/${landing.sourceSlug}`, getGalleryImages(page))
   const feedback = page.images.filter((image) => image.includes("Feedbacks-dr-Edi"))
 
   return (
@@ -601,6 +639,7 @@ export function LocalServiceLandingPage({
         <AboutDoctor />
         <ClinicSection tone="dark" />
         <LocalSearchSection />
+        <ServicePhotoSections serviceHref={`/${landing.sourceSlug}`} />
         <FAQSection faqs={faq} />
       </SiteShell>
     </>
@@ -773,9 +812,9 @@ export function ServicePage({ page }: { page: DrediPage }) {
   const groups = splitServiceGroups(page)
   const hero = heroAssets[page.slug] ?? heroAssets.home
   const feedback = page.images.filter((image) => image.includes("Feedbacks-dr-Edi"))
-  const gallery = getGalleryImages(page)
-  const seo = getServiceSeo(page.slug)
   const path = `/${page.slug}`
+  const gallery = getOptimizedServiceImages(path, getGalleryImages(page))
+  const seo = getServiceSeo(page.slug)
   const title = seo?.title ?? page.title
   const description = seo?.description ?? page.text[1] ?? ""
 
@@ -865,6 +904,7 @@ export function ServicePage({ page }: { page: DrediPage }) {
             )
           })}
 
+          <ServicePhotoSections serviceHref={path} />
           <FAQSection faqs={faq} />
         </main>
       </SiteShell>
@@ -1117,6 +1157,192 @@ function GallerySection({
         </div>
       </div>
     </section>
+  )
+}
+
+function ServicePhotoSections({ serviceHref }: { serviceHref: string }) {
+  if (serviceHref === "/implantes") return null
+
+  const galleries = getServiceGalleriesByHref(serviceHref)
+
+  if (!galleries.length) return null
+
+  return (
+    <section className="defer-render light-section py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+            Fotos por serviço
+          </p>
+          <SectionTitle className="mt-4" title="Veja fotos de casos relacionados a este tratamento" />
+        </div>
+        <div className="mt-12 grid gap-10">
+          {galleries.map((gallery) => (
+            <ServiceGalleryPreview gallery={gallery} key={gallery.slug} limit={8} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ServiceGalleryPreview({
+  gallery,
+  limit,
+}: {
+  gallery: ServiceGallery
+  limit?: number
+}) {
+  const images = typeof limit === "number" ? gallery.images.slice(0, limit) : gallery.images
+  const remaining = gallery.images.length - images.length
+
+  return (
+    <article className="rounded-lg border border-[rgba(184,145,49,.2)] bg-white p-4 shadow-[0_18px_55px_rgba(0,0,0,.08)] md:p-6">
+      <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h3 className="text-2xl font-black text-black">{gallery.heading}</h3>
+          <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-black/76">
+            {gallery.description}
+          </p>
+        </div>
+        <Link
+          className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md border border-[rgba(184,145,49,.45)] px-5 text-sm font-extrabold text-[var(--gold-dark)] transition hover:border-[var(--gold)] hover:bg-[rgba(184,145,49,.08)]"
+          href={`/fotos/${gallery.slug}`}
+        >
+          Ver todas
+          {remaining > 0 ? ` (+${remaining})` : ""}
+        </Link>
+      </div>
+
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {images.map((image) => (
+          <Link
+            className="group relative aspect-[4/5] overflow-hidden rounded-md bg-neutral-100"
+            href={`/fotos/${gallery.slug}`}
+            key={image.src}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px"
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
+          </Link>
+        ))}
+      </div>
+    </article>
+  )
+}
+
+export function PhotoGalleryIndexPage() {
+  return (
+    <SiteShell>
+      <main className="light-section min-h-screen py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+              Galeria
+            </p>
+            <SectionTitle className="mt-4" title="Fotos por serviço odontológico" />
+            <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black">
+              Consulte fotos organizadas por tipo de tratamento e veja exemplos relacionados aos serviços da Vida Odontologia.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceGalleries.map((gallery) => (
+              <Link
+                className="group overflow-hidden rounded-lg border border-[rgba(184,145,49,.2)] bg-white shadow-[0_18px_55px_rgba(0,0,0,.08)] transition hover:-translate-y-1 hover:border-[var(--gold)]"
+                href={`/fotos/${gallery.slug}`}
+                key={gallery.slug}
+              >
+                <div className="relative aspect-[4/5] bg-neutral-100">
+                  <Image
+                    src={gallery.images[0]?.src ?? "/placeholder.jpg"}
+                    alt={gallery.title}
+                    fill
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 360px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <h2 className="text-xl font-black text-black">{gallery.title}</h2>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-black/74">
+                    {gallery.images.length} foto{gallery.images.length === 1 ? "" : "s"} de {gallery.serviceLabel.toLowerCase()}.
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </main>
+    </SiteShell>
+  )
+}
+
+export function PhotoGalleryDetailPage({ gallery }: { gallery: ServiceGallery }) {
+  const path = `/fotos/${gallery.slug}`
+
+  return (
+    <>
+      <JsonLd
+        data={[
+          buildDentistSchema(),
+          buildPersonSchema(),
+          buildWebsiteSchema(),
+          buildWebPageSchema({
+            path,
+            title: gallery.title,
+            description: gallery.description,
+            image: gallery.images[0]?.src ?? homeSeo.image,
+          }),
+          buildBreadcrumbSchema(path, [
+            { name: "Início", path: "/" },
+            { name: "Fotos", path: "/fotos" },
+            { name: gallery.title, path },
+          ]),
+        ]}
+      />
+      <SiteShell>
+        <main className="light-section min-h-screen py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--gold-dark)]">
+                {gallery.serviceLabel}
+              </p>
+              <SectionTitle className="mt-4" title={gallery.heading} />
+              <p className="mx-auto mt-7 max-w-3xl text-base font-semibold leading-7 text-black">
+                {gallery.description}
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-[rgba(184,145,49,.45)] px-5 text-sm font-extrabold text-[var(--gold-dark)] transition hover:border-[var(--gold)] hover:bg-[rgba(184,145,49,.08)]"
+                  href={gallery.serviceHref}
+                >
+                  Ver serviço
+                </Link>
+                <CtaButton>Agendar avaliação</CtaButton>
+              </div>
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {gallery.images.map((image) => (
+                <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-neutral-100" key={image.src}>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
+      </SiteShell>
+    </>
   )
 }
 
@@ -1452,6 +1678,16 @@ function parseFaq(lines: readonly string[]) {
     faqs.push({ question, answer })
   }
   return faqs
+}
+
+function getOptimizedServiceImages(serviceHref: string, fallback: readonly string[], limit = 24) {
+  if (serviceHref === "/implantes") return fallback
+
+  const images = getServiceGalleriesByHref(serviceHref).flatMap((gallery) =>
+    gallery.images.map((image) => image.src),
+  )
+
+  return images.length ? images.slice(0, limit) : fallback
 }
 
 function getGalleryImages(page: DrediPage) {

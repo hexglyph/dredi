@@ -18,14 +18,14 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["health", "medical", "dentistry"],
     icons: [
       {
-        src: "/site-assets/2026/04/cropped-Logo-Dr-Edi-192x192.webp",
+        src: "/favicon-192x192.png",
         sizes: "192x192",
-        type: "image/webp",
+        type: "image/png",
       },
       {
-        src: "/site-assets/2026/04/cropped-Logo-Dr-Edi-180x180.webp",
+        src: "/apple-touch-icon.png",
         sizes: "180x180",
-        type: "image/webp",
+        type: "image/png",
         purpose: "any",
       },
     ],

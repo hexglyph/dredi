@@ -40,15 +40,33 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/site-assets/2026/04/cropped-Logo-Dr-Edi-32x32.webp",
-        sizes: "32x32",
+        url: "/favicon.ico",
+        sizes: "any",
       },
       {
-        url: "/site-assets/2026/04/cropped-Logo-Dr-Edi-192x192.webp",
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/site-assets/2026/04/cropped-Logo-Dr-Edi-32x32.webp",
+        sizes: "32x32",
+        type: "image/webp",
+      },
+      {
+        url: "/favicon-192x192.png",
         sizes: "192x192",
+        type: "image/png",
       },
     ],
-    apple: "/site-assets/2026/04/cropped-Logo-Dr-Edi-180x180.webp",
+    shortcut: "/favicon.ico",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
   manifest: "/manifest.webmanifest",
   openGraph: {

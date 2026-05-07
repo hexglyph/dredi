@@ -10,7 +10,6 @@ export const metadata: Metadata = createPageMetadata({
   path: "/",
   image: homeSeo.image,
   keywords: homeSeo.keywords,
-  noindex: true,
 })
 
 export default function HomeAliasPage() {

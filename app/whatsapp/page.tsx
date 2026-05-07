@@ -38,7 +38,6 @@ export const metadata: Metadata = createPageMetadata({
   description: pageDescription,
   path: "/whatsapp",
   image: heroImage,
-  noindex: true,
 })
 
 export default function WhatsAppPage() {

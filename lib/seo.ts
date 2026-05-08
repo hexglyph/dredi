@@ -43,7 +43,14 @@ export const businessProfile = {
     "Nova Campinas",
     "Jardim Chapadão",
   ],
-  sameAs: ["https://www.instagram.com/doutoredi"],
+  sameAs: [
+    "https://www.linkedin.com/in/consultoridredi",
+    "https://www.youtube.com/@doutoredi",
+    "https://www.facebook.com/109966578587007",
+    "https://www.tiktok.com/@doutoredi",
+    "https://www.instagram.com/doutoredi",
+    "https://wa.me/5519971710013",
+  ],
 } as const
 
 export const localKeywords = [

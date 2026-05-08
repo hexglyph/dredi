@@ -5,6 +5,7 @@ import {
   ChevronDown,
   Facebook,
   Instagram,
+  Linkedin,
   MapPin,
   Menu,
   MessageCircle,
@@ -49,10 +50,12 @@ const navTreatments = [
 ]
 
 const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/consultoridredi", Icon: Linkedin },
+  { label: "YouTube", href: "https://www.youtube.com/@doutoredi", Icon: Youtube },
+  { label: "Facebook", href: "https://www.facebook.com/109966578587007", Icon: Facebook },
+  { label: "TikTok", href: "https://www.tiktok.com/@doutoredi", Icon: Music2 },
   { label: "Instagram", href: "https://www.instagram.com/doutoredi", Icon: Instagram },
-  { label: "TikTok", href: "https://www.tiktok.com", Icon: Music2 },
-  { label: "Facebook", href: "https://www.facebook.com", Icon: Facebook },
-  { label: "YouTube", href: "https://youtube.com", Icon: Youtube },
+  { label: "WhatsApp", href: "https://wa.me/5519971710013", Icon: WhatsAppIcon },
 ]
 
 const heroAssets: Record<string, { desktop: string; mobile?: string }> = {
@@ -351,7 +354,23 @@ function SiteFooter() {
         <div className="relative h-20 w-36 overflow-hidden">
           <Image src={LOGO_GOLD} alt="Vida Odontologia" fill sizes="144px" className="scale-[2.15] object-contain" />
         </div>
-        <p className="text-sm">Copyright ©2025 Vida Mais. Todos os direitos reservados.</p>
+        <div className="flex flex-col items-center gap-4 md:items-end">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-[var(--gold-soft)] md:justify-end">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                aria-label={label}
+                className="grid size-11 place-items-center rounded-md border border-[rgba(184,145,49,.24)] bg-white/[.03] transition hover:-translate-y-0.5 hover:border-[var(--gold)] hover:text-white"
+                href={href}
+                key={label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="size-5" />
+              </a>
+            ))}
+          </div>
+          <p className="text-sm">Copyright ©2025 Vida Mais. Todos os direitos reservados.</p>
+        </div>
       </div>
     </footer>
   )

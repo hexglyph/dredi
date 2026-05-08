@@ -130,7 +130,9 @@ export default function RootLayout({
     <html lang="pt-BR" data-scroll-behavior="smooth">
       <head>
         <link rel="author" href={siteUrl} />
-        <link rel="me" href="https://www.instagram.com/doutoredi" />
+        {businessProfile.sameAs.map((href) => (
+          <link rel="me" href={href} key={href} />
+        ))}
       </head>
       <body className={`${montserrat.variable} ${helloParis.variable} antialiased`}>
         {children}
